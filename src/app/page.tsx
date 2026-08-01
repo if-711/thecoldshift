@@ -1,11 +1,10 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ChapterNav } from '@/components/ChapterNav';
 import { EvidenceBadge } from '@/components/EvidenceDrawer';
 import { CHAPTERS } from '@/lib/content/chapters';
 

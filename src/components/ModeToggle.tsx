@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+// React hooks will be used when mode persistence is added
 
 export type ViewMode = 'field' | 'evidence';
 

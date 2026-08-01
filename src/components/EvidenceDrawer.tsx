@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useCallback } from 'react';
 import type { EvidenceLevel } from '@/lib/content/schema';
 import { EVIDENCE_LABELS, EVIDENCE_DESCRIPTIONS } from '@/lib/content/schema';
 

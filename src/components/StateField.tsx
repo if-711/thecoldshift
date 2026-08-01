@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 const STAGES = ['INPUT', 'SIGNAL', 'NOTICE', 'CHOICE', 'PRACTICE'] as const;
 
@@ -18,6 +18,7 @@ const STAGES = ['INPUT', 'SIGNAL', 'NOTICE', 'CHOICE', 'PRACTICE'] as const;
 export function StateField({ progress = 0 }: { progress?: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rendererRef = useRef<any>(null);
   const frameRef = useRef<number>(0);
   const [webglSupported, setWebglSupported] = useState(true);
@@ -170,15 +171,14 @@ export function StateField({ progress = 0 }: { progress?: number }) {
 
           time += 0.003;
 
-          /* eslint-disable @typescript-eslint/no-explicit-any */
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const posAttr = geometry.getAttribute('position') as any;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const colorAttr = geometry.getAttribute('color') as any;
-          const sizeAttr = geometry.getAttribute('size') as any;
 
           // Progress affects field behavior
           const p = progress;
           const compression = 1 - p * 0.4;   // Field compresses as intensity rises
-          const drift = 0.002 + p * 0.005;     // Drift increases
           const spectralBlend = Math.max(0, (p - 0.3) * 1.4); // Blue appears mid-journey
 
           for (let i = 0; i < particleCount; i++) {
