@@ -1,0 +1,60 @@
+import type { Chapter } from './schema';
+
+export const CHAPTERS: Chapter[] = [
+  {
+    number: 1,
+    id: 'input',
+    title: 'Input',
+    subtitle: 'What controlled cold is — and what it is not.',
+    slug: 'input',
+    stateFieldStage: 'input',
+  },
+  {
+    number: 2,
+    id: 'signal',
+    title: 'Signal',
+    subtitle: 'How the body detects and transmits temperature.',
+    slug: 'signal',
+    stateFieldStage: 'signal',
+  },
+  {
+    number: 3,
+    id: 'notice',
+    title: 'Notice',
+    subtitle: 'Perceiving and interpreting internal bodily signals.',
+    slug: 'notice',
+    stateFieldStage: 'notice',
+  },
+  {
+    number: 4,
+    id: 'choice',
+    title: 'Choice',
+    subtitle: 'The interval between sensation and action.',
+    slug: 'choice',
+    stateFieldStage: 'choice',
+  },
+  {
+    number: 5,
+    id: 'practice',
+    title: 'Practice',
+    subtitle: 'Repeated structured exposure as deliberate practice.',
+    slug: 'practice',
+    stateFieldStage: 'practice',
+  },
+  {
+    number: 6,
+    id: 'evidence',
+    title: 'Evidence',
+    subtitle: 'Sources, classifications, and the limits of what we know.',
+    slug: 'evidence',
+    stateFieldStage: 'evidence',
+  },
+  {
+    number: 7,
+    id: 'system',
+    title: 'System',
+    subtitle: 'The Ice Sack — a dry cold containment system.',
+    slug: 'system',
+    stateFieldStage: 'system',
+  },
+];

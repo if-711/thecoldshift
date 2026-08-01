@@ -1,40 +1,135 @@
+/* ================================================================
+   THE COLD SHIFT — Design System
+   A field guide to controlled cold, sensory awareness, and
+   deliberate state practice.
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. TOKENS
+   ---------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Palette */
+  --color-black: #0a0a0a;
+  --color-bone: #e8e0d4;
+  --color-mineral: #6b6b6b;
+  --color-cold-white: #f5f5f5;
+  --color-spectral: #3a7bd5;
+  --color-spectral-dim: rgba(58, 123, 213, 0.12);
+  --color-spectral-glow: rgba(58, 123, 213, 0.25);
+
+  /* Semantic */
+  --color-bg: var(--color-cold-white);
+  --color-bg-deep: #f0ede8;
+  --color-bg-dark: var(--color-black);
+  --color-text: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-tertiary: var(--color-mineral);
+  --color-text-on-dark: var(--color-bone);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-strong: rgba(0, 0, 0, 0.16);
+
+  /* Evidence classifications */
+  --color-established: #2d6a4f;
+  --color-supported: #457b9d;
+  --color-emerging: #9a6c38;
+  --color-hypothesis: #7b5ea7;
+  --color-subjective: #6b6b6b;
+
+  /* Typography */
+  --font-editorial: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Menlo', monospace;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  /* Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.5rem;
+
+  /* Line heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Layout */
+  --max-width: 72rem;
+  --max-width-prose: 42rem;
+  --max-width-wide: 60rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 600ms;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ----------------------------------------------------------------
+   2. RESET & BASE
+   ---------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -42,8 +137,463 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+/* Focus states (WCAG 2.2 AA) */
+:focus-visible {
+  outline: 2px solid var(--color-spectral);
+  outline-offset: 2px;
+}
+
+/* ----------------------------------------------------------------
+   3. TYPOGRAPHY
+   ---------------------------------------------------------------- */
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-editorial);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-3xl); }
+h4 { font-size: var(--text-2xl); }
+
+@media (max-width: 768px) {
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+  h3 { font-size: var(--text-2xl); }
+  h4 { font-size: var(--text-xl); }
+}
+
+.text-prose {
+  max-width: var(--max-width-prose);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.text-prose p + p {
+  margin-top: var(--space-6);
+}
+
+/* ----------------------------------------------------------------
+   4. LAYOUT
+   ---------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-8);
   }
+}
+
+.section {
+  padding: var(--space-24) 0;
+}
+
+.section-dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-on-dark);
+}
+
+/* ----------------------------------------------------------------
+   5. EVIDENCE CLASSIFICATION BADGES
+   ---------------------------------------------------------------- */
+.evidence-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.evidence-badge::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+}
+
+.evidence-badge[data-level="established"] {
+  color: var(--color-established);
+  background: rgba(45, 106, 79, 0.08);
+}
+.evidence-badge[data-level="established"]::before {
+  background: var(--color-established);
+}
+
+.evidence-badge[data-level="supported"] {
+  color: var(--color-supported);
+  background: rgba(69, 123, 157, 0.08);
+}
+.evidence-badge[data-level="supported"]::before {
+  background: var(--color-supported);
+}
+
+.evidence-badge[data-level="emerging"] {
+  color: var(--color-emerging);
+  background: rgba(154, 108, 56, 0.08);
+}
+.evidence-badge[data-level="emerging"]::before {
+  background: var(--color-emerging);
+}
+
+.evidence-badge[data-level="hypothesis"] {
+  color: var(--color-hypothesis);
+  background: rgba(123, 94, 167, 0.08);
+}
+.evidence-badge[data-level="hypothesis"]::before {
+  background: var(--color-hypothesis);
+}
+
+.evidence-badge[data-level="subjective"] {
+  color: var(--color-subjective);
+  background: rgba(107, 107, 107, 0.08);
+}
+.evidence-badge[data-level="subjective"]::before {
+  background: var(--color-subjective);
+}
+
+/* ----------------------------------------------------------------
+   6. CHAPTER NAVIGATION
+   ---------------------------------------------------------------- */
+.chapter-nav {
+  display: flex;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.chapter-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.chapter-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  border-radius: 2px;
+  transition: color var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.chapter-nav-item:hover {
+  color: var(--color-text);
+  background: var(--color-border);
+}
+
+.chapter-nav-item[aria-current="true"] {
+  color: var(--color-text);
+  background: var(--color-border-strong);
+}
+
+.chapter-nav-number {
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+/* ----------------------------------------------------------------
+   7. MODE TOGGLE (FIELD / EVIDENCE)
+   ---------------------------------------------------------------- */
+.mode-toggle {
+  display: inline-flex;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.mode-toggle-option {
+  padding: var(--space-2) var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.mode-toggle-option:hover {
+  color: var(--color-text);
+}
+
+.mode-toggle-option[aria-pressed="true"] {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* ----------------------------------------------------------------
+   8. EVIDENCE DRAWER
+   ---------------------------------------------------------------- */
+.evidence-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-spectral);
+  cursor: pointer;
+  border-bottom: 1px dashed var(--color-spectral);
+  transition: opacity var(--duration-fast);
+}
+
+.evidence-trigger:hover {
+  opacity: 0.7;
+}
+
+.evidence-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.evidence-drawer-overlay[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.evidence-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 28rem;
+  background: var(--color-bg);
+  border-left: 1px solid var(--color-border);
+  z-index: 100;
+  transform: translateX(100%);
+  transition: transform var(--duration-normal) var(--ease-out);
+  overflow-y: auto;
+  padding: var(--space-8);
+}
+
+.evidence-drawer[data-open="true"] {
+  transform: translateX(0);
+}
+
+.evidence-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.evidence-drawer-close {
+  padding: var(--space-2);
+  color: var(--color-text-tertiary);
+}
+
+.evidence-source {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.evidence-source:last-child {
+  border-bottom: none;
+}
+
+.evidence-source-title {
+  font-family: var(--font-editorial);
+  font-size: var(--text-base);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.evidence-source-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  line-height: var(--leading-relaxed);
+}
+
+.evidence-source-meta dt {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: var(--space-3);
+}
+
+.evidence-source-meta dd {
+  margin-left: 0;
+}
+
+/* ----------------------------------------------------------------
+   9. BUTTONS
+   ---------------------------------------------------------------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  font-family: var(--font-editorial);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: var(--color-text);
+  border: 1px solid transparent;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.btn-primary:hover {
+  background: var(--color-text-secondary);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  font-family: var(--font-editorial);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  background: transparent;
+  border: 1px solid var(--color-border-strong);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text);
+}
+
+/* ----------------------------------------------------------------
+   10. DISCLOSURE BAR
+   ---------------------------------------------------------------- */
+.disclosure-bar {
+  padding: var(--space-3) 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  border-top: 1px solid var(--color-border);
+  letter-spacing: 0.02em;
+}
+
+/* ----------------------------------------------------------------
+   11. STATE FIELD CONTAINER
+   ---------------------------------------------------------------- */
+.state-field-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--color-bg-dark);
+  overflow: hidden;
+}
+
+.state-field-label {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.05em;
+}
+
+.state-field-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-on-dark);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ----------------------------------------------------------------
+   12. CLAIM LEDGER TABLE
+   ---------------------------------------------------------------- */
+.claim-ledger {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.claim-ledger th {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 2px solid var(--color-border-strong);
+}
+
+.claim-ledger td {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.claim-ledger tr:hover td {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* ----------------------------------------------------------------
+   13. UTILITIES
+   ---------------------------------------------------------------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
