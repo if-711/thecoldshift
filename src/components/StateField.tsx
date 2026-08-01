@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useMemo } from 'react';
 
 const STAGES = ['INPUT', 'SIGNAL', 'NOTICE', 'CHOICE', 'PRACTICE'] as const;
 
@@ -22,16 +22,12 @@ export function StateField({ progress = 0 }: { progress?: number }) {
   const rendererRef = useRef<any>(null);
   const frameRef = useRef<number>(0);
   const [webglSupported, setWebglSupported] = useState(true);
-  const [currentStage, setCurrentStage] = useState(0);
 
-  // Determine current stage from progress (0-1)
-  useEffect(() => {
-    const stageIndex = Math.min(
-      Math.floor(progress * STAGES.length),
-      STAGES.length - 1
-    );
-    setCurrentStage(stageIndex);
-  }, [progress]);
+  // Derive current stage from progress (0-1) — pure computation, no effect needed
+  const currentStage = useMemo(() => Math.min(
+    Math.floor(progress * STAGES.length),
+    STAGES.length - 1
+  ), [progress]);
 
   // Initialize Three.js
   useEffect(() => {
