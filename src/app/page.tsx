@@ -343,7 +343,7 @@ export default function HomePage() {
               </h2>
               <p className="text-prose">
                 A dry cold containment system by BHVD. No water. No filling.
-                The cold contact begins when you put it on. Neuropause provides a
+                The cold contact begins when you zip in. Neuropause provides a
                 nine-minute endpoint, with the option to exit sooner when needed.
               </p>
               <p className="text-prose" style={{ marginTop: 'var(--space-4)' }}>
