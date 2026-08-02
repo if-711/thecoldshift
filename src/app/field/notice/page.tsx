@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { EvidenceBadge } from '@/components/EvidenceDrawer';
+import { StatementTypeBadge } from '@/components/StatementTypeBadge';
 
 export const metadata: Metadata = {
   title: 'Notice — Perceiving Internal Signals',
@@ -32,40 +32,31 @@ export default function NoticePage() {
             one&apos;s own accuracy).
           </p>
 
-          <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-            <EvidenceBadge level="established" />
-            <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-              Interoception as a construct is well-established in neuroscience and psychology.
-              The three-dimensional model (accuracy, sensibility, awareness) is widely referenced
-              in the academic literature.
-            </p>
-            <p style={{ marginTop: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
-              Limitations: Measurement methods (especially heartbeat detection tasks) are debated.
-              Foundation research ledger pending.
-            </p>
-          </div>
-
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-            Cold creates an unambiguous interoceptive event.
+            Cold contact produces a salient cutaneous thermal signal.
           </h2>
           <p>
             Many interoceptive signals are subtle — a slight change in heart rate, a marginal
-            shift in breathing. Cold contact is not subtle. When a below-normal temperature
-            contacts the skin, the resulting signal is strong, localized, and difficult to ignore.
+            shift in breathing. Cold contact is different. When a below-normal temperature
+            contacts the skin, the resulting sensation is strong, localized, and difficult to ignore.
           </p>
           <p>
-            This makes cold a potentially useful training stimulus for interoceptive attention:
-            it creates a clear signal that can be deliberately attended to, observed, and
-            responded to with awareness.
+            Deliberate attention to this thermal signal forms part of the BHVD conceptual model
+            for structured sensory practice. Whether deliberate attention to cold-induced sensation
+            improves general interoceptive accuracy has not been established.
           </p>
 
           <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-            <EvidenceBadge level="hypothesis" />
+            <StatementTypeBadge
+              type="bhvd_conceptual_model"
+              confidence="no_direct_evidence"
+              transfer="Untested"
+            />
             <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
               The idea that cold exposure can function as a structured interoceptive training
-              stimulus is a BHVD conceptual model. While cold clearly produces strong body
-              signals, whether deliberate attention to cold-induced sensation improves general
-              interoceptive accuracy has not been directly studied.
+              stimulus is a BHVD conceptual model. Cold clearly produces strong cutaneous thermal
+              signals. Whether deliberate attention to these signals improves general interoceptive
+              accuracy has not been directly studied.
             </p>
           </div>
 

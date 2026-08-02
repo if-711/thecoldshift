@@ -116,7 +116,7 @@ export function Footer() {
           flexWrap: 'wrap',
           gap: 'var(--space-4)',
         }}>
-          <span>© {new Date().getFullYear()} BHVD Labs</span>
+          <span>© {new Date().getFullYear()} BHVD</span>
           <span>Cold is a stimulus, not a promised outcome.</span>
         </div>
       </div>

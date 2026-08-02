@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { EvidenceBadge } from '@/components/EvidenceDrawer';
 
 export const metadata: Metadata = {
   title: 'Safety',
-  description: 'Safety considerations, contraindications, and individual variability for controlled cold exposure.',
+  description: 'Safety information for The Ice Sack. This page is pending alignment with the approved product risk assessment.',
 };
 
 export default function SafetyPage() {
@@ -31,31 +30,21 @@ export default function SafetyPage() {
                 </p>
                 <p style={{ fontSize: 'var(--text-sm)', color: '#78350f', lineHeight: 'var(--leading-relaxed)' }}>
                   The Cold Shift does not provide medical advice, diagnosis, or treatment.
-                  Cold exposure carries real physiological risks. If you have any medical
-                  condition or concern, consult a qualified healthcare provider before
-                  attempting any cold exposure practice.
+                  If you have any medical condition or concern, consult a qualified healthcare
+                  provider before attempting any cold exposure practice.
                 </p>
               </div>
 
-              <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-                Known contraindications
-              </h2>
-              <p>
-                The following conditions may make cold exposure dangerous. This list is not
-                exhaustive. Consult a medical professional for guidance specific to your
-                situation.
-              </p>
-              <ul style={{ marginTop: 'var(--space-4)', paddingLeft: 'var(--space-6)', display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                <li>Cardiovascular disease or uncontrolled hypertension</li>
-                <li>Raynaud&apos;s disease or phenomenon</li>
-                <li>Cold urticaria (cold-induced hives)</li>
-                <li>Peripheral neuropathy or reduced sensation</li>
-                <li>Open wounds or recent surgical sites</li>
-                <li>Pregnancy</li>
-                <li>Cryoglobulinemia</li>
-                <li>Uncontrolled seizure disorders</li>
-                <li>Current fever or active infection</li>
-              </ul>
+              <div style={{ margin: 'var(--space-12) 0', padding: 'var(--space-8)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
+                <p style={{ fontSize: 'var(--text-base)', fontWeight: 500, marginBottom: 'var(--space-4)' }}>
+                  Product safety information is being finalized.
+                </p>
+                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', lineHeight: 'var(--leading-relaxed)' }}>
+                  Ice Sack specific safety information is being finalized against the product
+                  risk assessment and Instructions for Use. This page does not replace the
+                  instructions supplied with the product.
+                </p>
+              </div>
 
               <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
                 Individual variability
@@ -71,23 +60,17 @@ export default function SafetyPage() {
                 exposure.
               </p>
 
-              <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-                <EvidenceBadge level="established" />
-                <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-                  Individual variability in thermoregulatory response is well-established
-                  in the physiology literature. Cold tolerance varies with age, sex, body
-                  composition, habituation status, and health.
-                </p>
-              </div>
-
               <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
                 General guidance
               </h2>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-4)' }}>
+                The following general cold exposure safety principles apply regardless of
+                delivery method. Product-specific guidance will appear above once finalized.
+              </p>
               <ul style={{ marginTop: 'var(--space-4)', paddingLeft: 'var(--space-6)', display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
                 <li>Start with shorter durations and milder temperatures</li>
-                <li>Never practice cold exposure alone in water</li>
-                <li>Stop immediately if you experience numbness, extreme pain, dizziness, or confusion</li>
-                <li>Monitor skin for signs of cold injury (white or gray patches, persistent numbness)</li>
+                <li>Stop immediately if you experience unexpected pain, numbness, burning, or confusion</li>
+                <li>Monitor skin for signs of cold injury (persistent redness, discoloration, blistering)</li>
                 <li>Do not use cold exposure to suppress or override pain signals from an injury</li>
                 <li>If you are unsure whether cold exposure is safe for you, ask your doctor</li>
               </ul>

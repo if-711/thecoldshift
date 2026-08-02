@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { EvidenceBadge } from '@/components/EvidenceDrawer';
+import { StatementTypeBadge } from '@/components/EvidenceDrawer';
 
 export const metadata: Metadata = {
   title: 'Input — What Controlled Cold Is',
   description:
-    'Define controlled cold. Differentiate delivery methods. Understand what makes cold exposure a structured sensory input rather than a wellness commodity.',
+    'Define controlled cold. Differentiate delivery methods. Understand what makes cold exposure a structured sensory input.',
 };
 
 export default function InputPage() {
@@ -49,15 +49,6 @@ export default function InputPage() {
             input that can be used as the basis for a practice of noticing, observing, and choosing.
           </p>
 
-          <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-            <EvidenceBadge level="established" />
-            <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-              Cold is a physical stimulus that activates thermoreceptors in the skin.
-              This is established physiology documented in standard references on
-              somatosensory neuroscience.
-            </p>
-          </div>
-
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
             Not all cold is the same.
           </h2>
@@ -69,7 +60,7 @@ export default function InputPage() {
             qualification is not responsible.
           </p>
 
-          {/* Delivery method table */}
+          {/* Delivery method table — no evidence badges, plain text transfer notes */}
           <div style={{ margin: 'var(--space-8) 0', overflowX: 'auto' }}>
             <table className="claim-ledger" style={{ minWidth: '36rem' }}>
               <thead>
@@ -77,7 +68,7 @@ export default function InputPage() {
                   <th>Method</th>
                   <th>Mechanism</th>
                   <th>Typical Temp</th>
-                  <th>Transfer to Ice Sack?</th>
+                  <th>Transfer to Ice Sack</th>
                 </tr>
               </thead>
               <tbody>
@@ -86,8 +77,7 @@ export default function InputPage() {
                   <td>Convective heat loss, full body</td>
                   <td>10–15 °C</td>
                   <td>
-                    <EvidenceBadge level="emerging" />
-                    <span style={{ fontSize: 'var(--text-xs)', display: 'block', marginTop: '4px', color: 'var(--color-text-tertiary)' }}>
+                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
                       Different mechanism. Results do not directly transfer.
                     </span>
                   </td>
@@ -97,8 +87,7 @@ export default function InputPage() {
                   <td>Cold gas exposure, minimal contact</td>
                   <td>−110 to −140 °C</td>
                   <td>
-                    <EvidenceBadge level="emerging" />
-                    <span style={{ fontSize: 'var(--text-xs)', display: 'block', marginTop: '4px', color: 'var(--color-text-tertiary)' }}>
+                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
                       Very different modality. No direct equivalence.
                     </span>
                   </td>
@@ -108,20 +97,18 @@ export default function InputPage() {
                   <td>Conductive, localized</td>
                   <td>0 °C surface</td>
                   <td>
-                    <EvidenceBadge level="supported" />
-                    <span style={{ fontSize: 'var(--text-xs)', display: 'block', marginTop: '4px', color: 'var(--color-text-tertiary)' }}>
-                      Closest mechanism but different coverage area.
+                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
+                      Closest mechanism but different coverage and temperature profile.
                     </span>
                   </td>
                 </tr>
                 <tr>
                   <td style={{ fontWeight: 500 }}>Phase-change material (PCM)</td>
                   <td>Conductive, temperature-stable</td>
-                  <td>Varies by PCM formulation</td>
+                  <td>Varies by formulation</td>
                   <td>
-                    <EvidenceBadge level="supported" />
-                    <span style={{ fontSize: 'var(--text-xs)', display: 'block', marginTop: '4px', color: 'var(--color-text-tertiary)' }}>
-                      The Ice Sack uses PCM. But specific PCM research is limited.
+                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
+                      The Ice Sack uses PCM. Specific PCM research is limited.
                     </span>
                   </td>
                 </tr>
@@ -130,8 +117,7 @@ export default function InputPage() {
                   <td>Ambient temperature exposure</td>
                   <td>Varies</td>
                   <td>
-                    <EvidenceBadge level="emerging" />
-                    <span style={{ fontSize: 'var(--text-xs)', display: 'block', marginTop: '4px', color: 'var(--color-text-tertiary)' }}>
+                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
                       Uncontrolled variable. Not comparable.
                     </span>
                   </td>
@@ -158,11 +144,15 @@ export default function InputPage() {
           </p>
 
           <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-            <EvidenceBadge level="hypothesis" />
+            <StatementTypeBadge
+              type="bhvd_conceptual_model"
+              confidence="no_direct_evidence"
+              transfer="Untested"
+            />
             <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
               The Cold Shift framework — that cold can serve as a structured sensory input
-              for deliberate state practice — is a BHVD conceptual model. It has not been
-              validated as a complete framework by independent research.
+              for deliberate practice — is a BHVD conceptual model. It has not been validated
+              as a complete framework by independent research.
             </p>
           </div>
         </div>
@@ -184,9 +174,6 @@ export default function InputPage() {
               fontSize: 'var(--text-sm)',
               color: 'var(--color-text-secondary)',
               textDecoration: 'none',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 'var(--space-2)',
             }}
           >
             Next: Signal →

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { EvidenceBadge } from '@/components/EvidenceDrawer';
 
 export const metadata: Metadata = {
   title: 'Signal — How the Body Detects Temperature',
@@ -35,17 +34,12 @@ export default function SignalPage() {
             becomes aware of temperature changes in the external environment.
           </p>
 
-          <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-            <EvidenceBadge level="established" />
-            <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-              Cutaneous thermoreception is established physiology. Cold-sensitive neurons
-              primarily express the TRPM8 ion channel, which activates at skin temperatures
-              below approximately 28 °C and increases firing rate as temperature decreases.
-            </p>
-            <p style={{ marginTop: 'var(--space-2)', fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
-              Source: Standard somatosensory neuroscience references. Research ledger pending.
-            </p>
-          </div>
+          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', marginTop: 'var(--space-4)' }}>
+            Cutaneous thermoreception is established physiology. Cold-sensitive neurons
+            primarily express the TRPM8 ion channel, which activates at skin temperatures
+            below approximately 28 °C and increases firing rate as temperature decreases.
+            Source records pending — evidence ledger in progress.
+          </p>
 
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
             Skin temperature is not core temperature.
@@ -55,15 +49,7 @@ export default function SignalPage() {
             The temperature your skin registers during cold exposure is not the same as your
             body&apos;s core temperature. Localized cold application changes skin temperature
             rapidly, but core temperature changes slowly and requires sustained, extensive
-            cooling. Most short cold exposures — including sessions with the Ice Sack — affect
-            skin temperature and peripheral sensation, not core temperature.
-          </p>
-
-          <p>
-            This distinction matters because many claimed benefits of cold exposure are
-            associated with core temperature change, but the sensory experience that matters
-            for this practice — the feeling of cold, the impulse to react — is driven by skin
-            temperature and peripheral nerve activation.
+            cooling.
           </p>
 
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
@@ -82,16 +68,6 @@ export default function SignalPage() {
             internal body signals. The signal itself is physiology. Its interpretation is
             where individual experience begins.
           </p>
-
-          <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-            <EvidenceBadge level="supported" />
-            <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-              The distinction between peripheral signal detection and central processing
-              is well-established in neuroscience. The role of individual variation in
-              interpreting thermal signals is supported by interoception research, though
-              specific studies on cold exposure and interoceptive accuracy are limited.
-            </p>
-          </div>
         </div>
 
         <nav style={{ marginTop: 'var(--space-16)', paddingTop: 'var(--space-8)', borderTop: '1px solid var(--color-border)', display: 'flex', justifyContent: 'space-between' }}>

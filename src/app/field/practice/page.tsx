@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { EvidenceBadge } from '@/components/EvidenceDrawer';
+import { StatementTypeBadge } from '@/components/StatementTypeBadge';
 
 export const metadata: Metadata = {
-  title: 'Practice — The Nine-Minute Protocol',
-  description: 'Repeated structured exposure as deliberate practice. The Neuropause Protocol — a nine-minute guided cold session.',
+  title: 'Practice — The Neuropause Protocol',
+  description: 'Neuropause is a nine-minute practice with three phases: Entry, Load, and Peak.',
 };
 
 export default function PracticePage() {
@@ -13,7 +13,7 @@ export default function PracticePage() {
         <header style={{ marginBottom: 'var(--space-16)' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--color-text-tertiary)' }}>Chapter 05</span>
           <h1 style={{ marginTop: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>Practice</h1>
-          <p className="text-prose">Repeated structured exposure as deliberate practice.</p>
+          <p className="text-prose">A nine-minute structured cold session.</p>
         </header>
 
         <div className="text-prose">
@@ -21,24 +21,25 @@ export default function PracticePage() {
             The Neuropause Protocol.
           </h2>
           <p>
-            Neuropause is the original nine-minute guided protocol developed by BHVD.
-            It structures a cold session into phases — approach, contact, observe, choose,
-            release — with the goal of practicing deliberate attention and response during
-            a clear, bounded sensory event.
+            Neuropause is a nine-minute practice developed by BHVD. It structures a cold
+            session into three phases — Entry, Load, and Peak — with the goal of practicing
+            deliberate attention during a bounded sensory event.
           </p>
 
           <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-            <EvidenceBadge level="hypothesis" />
+            <StatementTypeBadge
+              type="bhvd_conceptual_model"
+              confidence="no_direct_evidence"
+              transfer="Untested"
+            />
             <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-              The nine-minute Neuropause Protocol is a BHVD-designed practice structure.
+              The Neuropause Protocol is a BHVD practice structure.
               Its format, timing, and phase progression have not been independently validated.
-              The protocol is based on the framework described in earlier chapters, which itself
-              is a brand hypothesis.
             </p>
           </div>
 
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-            Structure of a session.
+            Three phases. Nine minutes.
           </h2>
 
           <div style={{ margin: 'var(--space-8) 0' }}>
@@ -46,38 +47,56 @@ export default function PracticePage() {
               <thead>
                 <tr>
                   <th>Phase</th>
-                  <th>Duration</th>
+                  <th>Time</th>
                   <th>Focus</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style={{ fontWeight: 500 }}>Approach</td>
-                  <td>~1 min</td>
-                  <td>Prepare the environment. Set intention to observe.</td>
+                  <td style={{ fontWeight: 500 }}>Entry</td>
+                  <td>0–3 min</td>
+                  <td>
+                    Cold contact begins. Notice the thermal signal, your breathing,
+                    and the first impulse to react. The task is to observe what is
+                    happening while remaining within the product safety limits.
+                  </td>
                 </tr>
                 <tr>
-                  <td style={{ fontWeight: 500 }}>Contact</td>
-                  <td>~2 min</td>
-                  <td>Place the cold. Notice the initial signal.</td>
+                  <td style={{ fontWeight: 500 }}>Load</td>
+                  <td>3–6 min</td>
+                  <td>
+                    The sensation continues. Settle into an unforced breathing rhythm.
+                    If comfortable, inhale for four seconds and exhale for six to eight
+                    seconds. No breath holding. No forcing.
+                  </td>
                 </tr>
                 <tr>
-                  <td style={{ fontWeight: 500 }}>Observe</td>
-                  <td>~3 min</td>
-                  <td>Attend to sensation. Notice the urge to react.</td>
-                </tr>
-                <tr>
-                  <td style={{ fontWeight: 500 }}>Choose</td>
-                  <td>~2 min</td>
-                  <td>Decide to stay or stop. Make it deliberate.</td>
-                </tr>
-                <tr>
-                  <td style={{ fontWeight: 500 }}>Release</td>
-                  <td>~1 min</td>
-                  <td>Remove the cold. Notice the transition.</td>
+                  <td style={{ fontWeight: 500 }}>Peak</td>
+                  <td>6–9 min</td>
+                  <td>
+                    Attention becomes the practice. Notice what has changed and what
+                    has not. Choose deliberately whether to continue. Complete the
+                    session at nine minutes or stop sooner if a safety threshold is
+                    reached.
+                  </td>
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <p style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-lg)', fontWeight: 500, marginTop: 'var(--space-8)' }}>
+            Entry. Load. Peak. One contained session.
+          </p>
+
+          <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-4)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', lineHeight: 'var(--leading-relaxed)' }}>
+            <p>
+              The phase timings organize the Neuropause practice. They do not represent
+              measured physiological transitions.
+            </p>
+            <p style={{ marginTop: 'var(--space-2)' }}>
+              Peak refers to the final attentional phase of the practice. It is not a
+              measured physiological peak.
+            </p>
           </div>
 
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
@@ -87,23 +106,24 @@ export default function PracticePage() {
             Repeated practice with a structured sensory input may improve a person&apos;s
             ability to notice body signals and observe their own reactions during that
             specific type of session. Whether these observations transfer to other areas
-            of life — stress management, emotional regulation, decision-making — is not
-            established.
+            of life is not established.
           </p>
           <p>
             The Cold Shift does not claim that nine minutes of cold practice will change
             your life. It provides a structure for practicing a specific kind of attention
-            under specific conditions. What a person does with that practice is their own.
+            under specific conditions.
           </p>
 
           <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-            <EvidenceBadge level="hypothesis" />
+            <StatementTypeBadge
+              type="bhvd_conceptual_model"
+              confidence="no_direct_evidence"
+              transfer="Untested"
+            />
             <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-              The claim that structured cold practice improves attention, self-regulation,
-              or metacognition in contexts beyond the cold session itself remains a BHVD
-              brand hypothesis. The limits of behavioral transfer from cold practice to
-              daily life are unknown and are an area where future research would be needed
-              before making stronger claims.
+              The claim that structured cold practice improves attention or
+              self-regulation in contexts beyond the cold session itself remains a BHVD
+              conceptual model. Transfer from cold practice to daily life is untested.
             </p>
           </div>
         </div>

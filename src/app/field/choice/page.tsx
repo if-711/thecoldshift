@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { EvidenceBadge } from '@/components/EvidenceDrawer';
+import { StatementTypeBadge } from '@/components/EvidenceDrawer';
 
 export const metadata: Metadata = {
   title: 'Choice — The Interval Between Sensation and Action',
-  description: 'Metacognition and response selection under sensory stress. The space between feeling cold and deciding what to do about it.',
+  description: 'The space between feeling cold and deciding what to do about it.',
 };
 
 export default function ChoicePage() {
@@ -31,16 +31,6 @@ export default function ChoicePage() {
             observe the impulse rather than simply follow it.
           </p>
 
-          <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-            <EvidenceBadge level="supported" />
-            <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-              The concept of a stimulus-response interval influenced by attention and
-              metacognition is supported by research in cognitive psychology, particularly
-              in studies of response inhibition, attentional control, and executive function.
-              However, the specific application to cold exposure is not well-studied.
-            </p>
-          </div>
-
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
             This is not about endurance.
           </h2>
@@ -51,12 +41,16 @@ export default function ChoicePage() {
           </p>
 
           <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
-            <EvidenceBadge level="hypothesis" />
+            <StatementTypeBadge
+              type="bhvd_conceptual_model"
+              confidence="no_direct_evidence"
+              transfer="Untested"
+            />
             <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
               Whether practicing deliberate choice under cold-induced sensory stress improves
-              decision-making or self-regulation in other contexts is a BHVD hypothesis. It has
-              not been demonstrated in controlled research. The limits of behavioral transfer
-              from cold practice to daily life are unknown.
+              decision-making or self-regulation in other contexts is a BHVD conceptual model.
+              It has not been demonstrated in controlled research. Transfer from cold practice
+              to daily life is untested.
             </p>
           </div>
         </div>
