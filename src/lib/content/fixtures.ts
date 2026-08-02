@@ -16,6 +16,7 @@ assertPreviewMode('Prototype fixtures');
 
 export const PROTOTYPE_SOURCE: Source = {
   id: 'proto-source-001',
+  pmid: '',
   title: 'Demonstration source record',
   authors: ['Interface Prototype'],
   journal: 'Not a scientific source',

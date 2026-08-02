@@ -5,8 +5,8 @@ import { useState } from 'react';
 /**
  * DeliveryMethodComparison — Prototype interaction.
  * Shows physical differences between cold delivery methods.
- * Does NOT include specific Ice Sack measurements (pending verification).
- * Typical temperatures for other methods also require source records.
+ * The Ice Sack profile is based on manufacturer-supplied configuration.
+ * Product-specific thermal performance remains a direct testing question.
  */
 
 interface DeliveryMethod {
@@ -65,12 +65,16 @@ const METHODS: DeliveryMethod[] = [
     coverage: 'Full body',
     note: 'Uncontrolled. Temperatures, durations, and physiological outcomes vary widely.',
   },
+  {
+    id: 'ice-sack',
+    name: 'The Ice Sack',
+    mechanism: 'Solid conduction through encapsulated PCM',
+    medium: 'Dry phase-change material system',
+    contact: 'Broad dry surface contact through the product shell',
+    coverage: 'Full-body containment by design',
+    note: 'Manufacturer-supplied configuration. Direct thermal profile, contact consistency, and product-specific outcomes require testing with the production system.',
+  },
 ];
-
-const ICE_SACK_PENDING = {
-  name: 'The Ice Sack',
-  status: 'Product profile pending verified measurements.',
-};
 
 export function DeliveryMethodComparison() {
   const [active, setActive] = useState('cwi');
@@ -125,16 +129,6 @@ export function DeliveryMethodComparison() {
         </dl>
         <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-tertiary)', lineHeight: 'var(--leading-relaxed)', marginTop: 'var(--space-4)', fontStyle: 'italic' }}>
           {activeMethod.note}
-        </p>
-      </div>
-
-      {/* Ice Sack — pending */}
-      <div className="delivery-icesack-pending">
-        <p style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-text-tertiary)', marginBottom: 'var(--space-1)' }}>
-          {ICE_SACK_PENDING.name}
-        </p>
-        <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-tertiary)' }}>
-          {ICE_SACK_PENDING.status}
         </p>
       </div>
     </div>

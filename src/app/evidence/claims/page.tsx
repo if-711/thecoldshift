@@ -1,58 +1,126 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import {
+  claims,
+  EVIDENCE_CONFIDENCE_LABELS,
+  ICE_SACK_APPLICABILITY_LABELS,
+  STATEMENT_TYPE_LABELS,
+} from '@/lib/content/schema';
 
 export const metadata: Metadata = {
   title: 'Claim Ledger',
-  description: 'The public claim ledger for The Cold Shift. Every material scientific claim will appear here with its classification, sources, and limitations.',
+  description:
+    'The public wording, evidence confidence, limitations, and product applicability of claims used by The Cold Shift.',
 };
 
 export default function ClaimLedgerPage() {
+  const approvedClaims = claims.filter((claim) => claim.approvalStatus === 'approved');
+
   return (
     <>
       <Header />
       <main id="main-content" style={{ paddingTop: '3.5rem' }}>
         <article className="section">
-          <div className="container" style={{ maxWidth: 'var(--max-width-prose)' }}>
-            <header style={{ marginBottom: 'var(--space-16)' }}>
+          <div className="container">
+            <header style={{ marginBottom: 'var(--space-16)', maxWidth: 'var(--max-width-prose)' }}>
+              <p
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 'var(--text-xs)',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-text-tertiary)',
+                  marginBottom: 'var(--space-4)',
+                }}
+              >
+                Evidence records
+              </p>
               <h1 style={{ marginBottom: 'var(--space-6)' }}>Claim Ledger</h1>
               <p className="text-prose">
-                The public record of every material scientific claim on The Cold Shift.
+                Claims are published with their exact wording, source relationship,
+                limitations, and relevance to The Ice Sack.
               </p>
             </header>
 
-            <div className="text-prose">
-              <p>
-                Each approved claim will include:
-              </p>
-              <ul style={{ marginTop: 'var(--space-4)', paddingLeft: 'var(--space-6)', display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
-                <li>Exact claim wording</li>
-                <li>Statement type</li>
-                <li>Evidence confidence</li>
-                <li>Source records with study metadata</li>
-                <li>Limitations</li>
-                <li>Ice Sack applicability</li>
-                <li>Last review date</li>
-                <li>Approval status</li>
-              </ul>
-
-              <div style={{ margin: 'var(--space-12) 0', padding: 'var(--space-8)', border: '1px dashed var(--color-border-strong)', textAlign: 'center' }}>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', color: 'var(--color-text-tertiary)', letterSpacing: '0.04em' }}>
-                  CLAIM LEDGER — NOT YET POPULATED
-                </p>
-                <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-tertiary)', marginTop: 'var(--space-2)' }}>
-                  Approved claim records will appear here when the evidence system is complete.
-                </p>
-              </div>
-
-              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-tertiary)' }}>
-                The claim ledger is part of the evidence architecture described on the{' '}
-                <a href="/evidence/" style={{ color: 'var(--color-text-secondary)', textDecoration: 'underline' }}>
-                  Evidence
-                </a>{' '}
-                page.
-              </p>
+            <div style={{ borderTop: '1px solid var(--color-border-strong)' }}>
+              {approvedClaims.map((claim, index) => (
+                <Link
+                  href={`/evidence/claims/${claim.id}/`}
+                  key={claim.id}
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '3.5rem minmax(0, 1fr) auto',
+                    gap: 'var(--space-6)',
+                    padding: 'var(--space-8) 0',
+                    borderBottom: '1px solid var(--color-border)',
+                    alignItems: 'start',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--color-spectral)',
+                    }}
+                  >
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span>
+                    <span
+                      className="evidence-badge"
+                      data-type={claim.statementType}
+                      style={{ marginBottom: 'var(--space-4)' }}
+                    >
+                      {STATEMENT_TYPE_LABELS[claim.statementType]}
+                    </span>
+                    <strong
+                      style={{
+                        display: 'block',
+                        maxWidth: '52rem',
+                        fontFamily: 'var(--font-editorial)',
+                        fontSize: 'var(--text-lg)',
+                        fontWeight: 500,
+                        lineHeight: 'var(--leading-snug)',
+                      }}
+                    >
+                      {claim.statement}
+                    </strong>
+                    <span
+                      style={{
+                        display: 'block',
+                        marginTop: 'var(--space-4)',
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: 'var(--text-xs)',
+                        color: 'var(--color-text-tertiary)',
+                      }}
+                    >
+                      {EVIDENCE_CONFIDENCE_LABELS[claim.evidenceConfidence]} confidence ·{' '}
+                      {ICE_SACK_APPLICABILITY_LABELS[claim.iceSackApplicability]}
+                    </span>
+                  </span>
+                  <span aria-hidden="true" style={{ color: 'var(--color-text-tertiary)' }}>
+                    →
+                  </span>
+                </Link>
+              ))}
             </div>
+
+            <Link
+              href="/evidence/"
+              style={{
+                display: 'inline-block',
+                marginTop: 'var(--space-12)',
+                fontFamily: 'var(--font-mono)',
+                fontSize: 'var(--text-xs)',
+                color: 'var(--color-spectral)',
+                textDecoration: 'underline',
+                textUnderlineOffset: '3px',
+              }}
+            >
+              Return to Evidence
+            </Link>
           </div>
         </article>
       </main>

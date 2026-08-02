@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { StatementTypeBadge } from '@/components/StatementTypeBadge';
+import { DeliveryMethodComparison } from '@/components/DeliveryMethodComparison';
 
 export const metadata: Metadata = {
   title: 'Input — What Controlled Cold Is',
@@ -35,18 +36,19 @@ export default function InputPage() {
         {/* Content */}
         <div className="text-prose">
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-            Controlled cold is a stimulus, not a therapy.
+            Controlled cold defines the input.
           </h2>
 
           <p>
-            Cold exposure means applying a below-normal temperature to the body in a deliberate,
-            bounded way. The purpose in this context is to create a clear sensory event — a defined
-            physical input that is noticeable, unambiguous, and time-limited.
+            Cold exposure means applying a below-normal temperature to the body. Controlled cold
+            defines the delivery method, contact conditions, duration, intended use, and exit.
+            In this framework, those variables create a bounded sensory event that can become
+            the object of deliberate attention.
           </p>
 
           <p>
-            This is not a medical treatment. It is not a performance protocol. It is a sensory
-            input that can be used as the basis for a practice of noticing, observing, and choosing.
+            The delivery format does not establish a medical, performance, recovery, or therapeutic
+            outcome. It establishes the conditions for a practice of noticing, observing, and choosing.
           </p>
 
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
@@ -60,70 +62,8 @@ export default function InputPage() {
             qualification is not responsible.
           </p>
 
-          {/* Delivery method table — no evidence badges, plain text transfer notes */}
-          <div style={{ margin: 'var(--space-8) 0', overflowX: 'auto' }}>
-            <table className="claim-ledger" style={{ minWidth: '36rem' }}>
-              <thead>
-                <tr>
-                  <th>Method</th>
-                  <th>Mechanism</th>
-                  <th>Typical Temp</th>
-                  <th>Transfer to Ice Sack</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style={{ fontWeight: 500 }}>Cold water immersion</td>
-                  <td>Convective heat loss, full body</td>
-                  <td>10–15 °C</td>
-                  <td>
-                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
-                      Different mechanism. Results do not directly transfer.
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td style={{ fontWeight: 500 }}>Whole-body cryotherapy</td>
-                  <td>Cold gas exposure, minimal contact</td>
-                  <td>−110 to −140 °C</td>
-                  <td>
-                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
-                      Very different modality. No direct equivalence.
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td style={{ fontWeight: 500 }}>Local icing / ice packs</td>
-                  <td>Conductive, localized</td>
-                  <td>0 °C surface</td>
-                  <td>
-                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
-                      Closest mechanism but different coverage and temperature profile.
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td style={{ fontWeight: 500 }}>Phase-change material (PCM)</td>
-                  <td>Conductive, temperature-stable</td>
-                  <td>Varies by formulation</td>
-                  <td>
-                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
-                      The Ice Sack uses PCM. Specific PCM research is limited.
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td style={{ fontWeight: 500 }}>Environmental cold</td>
-                  <td>Ambient temperature exposure</td>
-                  <td>Varies</td>
-                  <td>
-                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-tertiary)' }}>
-                      Uncontrolled variable. Not comparable.
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div style={{ margin: 'var(--space-8) 0' }}>
+            <DeliveryMethodComparison />
           </div>
 
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>

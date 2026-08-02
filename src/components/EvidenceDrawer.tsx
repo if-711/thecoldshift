@@ -360,7 +360,7 @@ export function EvidenceDrawer({
         {claim && (
           <div style={{ marginTop: 'var(--space-8)', paddingTop: 'var(--space-4)', borderTop: '1px solid var(--color-border)' }}>
             <a
-              href={`/evidence/claims/${claim.id}`}
+              href={`/evidence/claims/${claim.id}/`}
               style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', color: 'var(--color-spectral)', textDecoration: 'underline', letterSpacing: '0.04em' }}
             >
               Permanent claim record →

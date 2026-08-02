@@ -117,7 +117,7 @@ export default function SystemPage() {
                 }}
               >
                 The Ice Sack is the physical system behind Neuropause. It turns cold
-                from an improvised exposure into a defined, dry, time-bound practice.
+                into a defined, dry, time-bound practice.
               </p>
             </div>
           </header>

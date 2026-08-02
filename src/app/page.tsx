@@ -343,13 +343,12 @@ export default function HomePage() {
               </h2>
               <p className="text-prose">
                 A dry cold containment system by BHVD. No water. No filling.
-                The session begins when you put it on. It ends when you take it off
-                or when the protocol completes.
+                The cold contact begins when you put it on. Neuropause provides a
+                nine-minute endpoint, with the option to exit sooner when needed.
               </p>
               <p className="text-prose" style={{ marginTop: 'var(--space-4)' }}>
                 The Ice Sack delivers the cold input that Neuropause structures.
-                It is designed for a consistent, repeatable session —
-                a defined, repeatable session format.
+                It is designed around a defined, repeatable session format.
               </p>
             </div>
 

@@ -19,17 +19,18 @@ interface ValidationError {
 const errors: ValidationError[] = [];
 
 function validateClaim(claim: Claim): void {
-  // 1. Approved scientific interpretation must have a source
+  // 1. Approved scientific statements must have a source
   if (
     claim.approvalStatus === 'approved' &&
-    claim.statementType === 'research_interpretation' &&
+    (claim.statementType === 'research_interpretation' ||
+      claim.statementType === 'established_physiology') &&
     claim.sourceIds.length === 0
   ) {
     errors.push({
       type: 'claim',
       id: claim.id,
       field: 'sourceIds',
-      message: 'Approved research interpretation has no source records.',
+      message: 'Approved scientific statement has no source records.',
     });
   }
 
@@ -76,6 +77,41 @@ function validateClaim(claim: Claim): void {
   }
 }
 
+function validateSource(source: Source): void {
+  if (!source.title.trim()) {
+    errors.push({
+      type: 'source',
+      id: source.id,
+      field: 'title',
+      message: 'Source has no title.',
+    });
+  }
+  if (!source.pmid.trim()) {
+    errors.push({
+      type: 'source',
+      id: source.id,
+      field: 'pmid',
+      message: 'Source has no PubMed identifier.',
+    });
+  }
+  if (!source.doi.trim() || !source.url.trim()) {
+    errors.push({
+      type: 'source',
+      id: source.id,
+      field: 'doi/url',
+      message: 'Source is missing its DOI or primary-record URL.',
+    });
+  }
+  if (!source.limitations.trim()) {
+    errors.push({
+      type: 'source',
+      id: source.id,
+      field: 'limitations',
+      message: 'Source has no limitations statement.',
+    });
+  }
+}
+
 function validateProductFact(fact: ProductFact): void {
   // Verified product fact must have verification data
   if (fact.verificationStatus === 'verified') {
@@ -106,14 +142,39 @@ function validateProductFact(fact: ProductFact): void {
   }
 }
 
+function validateUniqueIds(
+  type: ValidationError['type'],
+  records: Array<{ id: string }>
+): void {
+  const ids = records.map((record) => record.id);
+  for (const id of new Set(ids)) {
+    if (ids.filter((candidate) => candidate === id).length > 1) {
+      errors.push({
+        type,
+        id,
+        field: 'id',
+        message: 'Duplicate record ID.',
+      });
+    }
+  }
+}
+
 // Run validation
 for (const claim of claims) {
   validateClaim(claim);
 }
 
+for (const source of sources) {
+  validateSource(source);
+}
+
 for (const fact of productFacts) {
   validateProductFact(fact);
 }
+
+validateUniqueIds('claim', claims);
+validateUniqueIds('source', sources);
+validateUniqueIds('product_fact', productFacts);
 
 // Report
 if (errors.length > 0) {

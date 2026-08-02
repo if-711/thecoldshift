@@ -21,7 +21,7 @@ const ITEMS: KIUItem[] = [
     category: 'known',
     label: 'Known',
     statement: 'Cutaneous cold is detected through peripheral sensory pathways.',
-    note: 'Established physiology. Requires an approved source record before final publication.',
+    note: 'Established physiology. The source ledger includes the foundational TRPM8 record and its limitations.',
   },
   {
     category: 'inferred',
