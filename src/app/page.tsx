@@ -5,12 +5,10 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { StatementTypeBadge } from '@/components/StatementTypeBadge';
 import { NeuropauseTimeline } from '@/components/NeuropauseTimeline';
 import { PreviewDisclosure } from '@/components/PreviewDisclosure';
-import { CHAPTERS } from '@/lib/content/chapters';
 
-// Lazy-load State Field (Three.js)
+// Lazy-load State Field (Three.js) — first screen renders before it loads
 const StateField = dynamic(
   () => import('@/components/StateField').then((m) => ({ default: m.StateField })),
   {
@@ -56,7 +54,7 @@ export default function HomePage() {
       <main id="main-content">
         {/* ============================================================
             SECTION 1 — THE TRANSITION IS THE PRACTICE
-            Category definition and thesis.
+            Category definition. 10-second comprehension target.
             ============================================================ */}
         <section
           style={{
@@ -72,7 +70,7 @@ export default function HomePage() {
             padding: 'var(--space-24) var(--space-6)',
           }}
         >
-          {/* Subtle radial glow */}
+          {/* Background subtle gradient */}
           <div
             style={{
               position: 'absolute',
@@ -121,8 +119,7 @@ export default function HomePage() {
                 lineHeight: 'var(--leading-relaxed)',
               }}
             >
-              We usually notice a state after it has already begun shaping
-              what we feel, think, and do. The Cold Shift starts earlier.
+              Controlled cold is a defined cold session.
             </p>
 
             <p
@@ -135,8 +132,8 @@ export default function HomePage() {
                 lineHeight: 'var(--leading-relaxed)',
               }}
             >
-              Controlled cold provides a clear, bounded session in which
-              sensation, attention, and response can be observed together.
+              The Ice Sack™ delivers the physical input.{' '}
+              Neuropause™ structures the nine minutes.
             </p>
 
             <p
@@ -150,10 +147,8 @@ export default function HomePage() {
                 letterSpacing: '0.02em',
               }}
             >
-              The Ice Sack™ delivers the physical input.{' '}
-              Neuropause™ structures the nine minutes.{' '}
-              The Cold Shift maps what is known, what is inferred,
-              and what remains to be tested.
+              The Cold Shift documents how cold is delivered,
+              what cold exposure research supports, and what remains untested.
             </p>
 
             {/* CTAs */}
@@ -176,7 +171,7 @@ export default function HomePage() {
                   color: 'var(--color-bone)',
                 }}
               >
-                See the Ice Sack
+                See The Ice Sack
               </Link>
             </div>
           </div>
@@ -200,8 +195,8 @@ export default function HomePage() {
         </section>
 
         {/* ============================================================
-            SECTION 2 — WHAT CONTROLLED COLD MEANS
-            Editorial explanation. No scroll spectacle.
+            SECTION 2 — WHAT MAKES COLD CONTROLLED?
+            Concise definition. Route to deeper Input chapter.
             ============================================================ */}
         <section className="section" style={{ background: 'var(--color-bg)' }}>
           <div className="container" style={{ maxWidth: 'var(--max-width-prose)' }}>
@@ -227,52 +222,42 @@ export default function HomePage() {
                 borderTop: '1px solid var(--color-border)',
                 borderBottom: '1px solid var(--color-border)',
               }}>
-                Controlled cold is a deliberately designed cold experience defined
-                by its delivery method, exposure conditions, duration, and intended use.
+                Cold exposure varies by delivery method, temperature, contact,
+                coverage, duration, and exit.
               </p>
               <p className="text-prose">
-                Cold exposure is not one thing. Water immersion, cryotherapy,
-                localized cooling, environmental cold, and dry contact systems
-                differ in medium, temperature, contact, coverage, duration, and exit.
-                Controlled cold begins by defining those variables.
+                Controlled cold defines those variables in advance.
               </p>
               <p className="text-prose">
-                People enter cold for different reasons. After training.
-                Before rest. To create a clear transition between one state and the next.
-                The reason can change. The session format remains defined.
+                It creates a repeatable session in which sensation, attention,
+                and response can be observed together. It does not depend on
+                one promised outcome.
               </p>
-              <p className="text-prose">
-                Controlled cold adds a bounded delivery format and a structured
-                attentional practice. It does not depend on one universal use case
-                or one promised outcome.
-              </p>
-              <p className="text-prose">
-                The question is not how much cold you can tolerate.
-                The question is what you notice while it is happening.
-              </p>
+            </div>
+
+            <div style={{ marginTop: 'var(--space-8)' }}>
+              <Link
+                href="/field/input/"
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 'var(--text-xs)',
+                  letterSpacing: '0.06em',
+                  color: 'var(--color-text-secondary)',
+                  textDecoration: 'none',
+                  borderBottom: '1px solid var(--color-border)',
+                  paddingBottom: 'var(--space-1)',
+                  transition: 'color var(--duration-fast)',
+                }}
+              >
+                Compare delivery methods →
+              </Link>
             </div>
           </div>
         </section>
 
         {/* ============================================================
-            SECTION 3 — SIGNAL, NOTICE, STAY, CHOOSE, TRANSITION
-            The State Field — one defining immersive interaction.
-            Height adapts: 300vh desktop, shorter mobile.
-            ============================================================ */}
-        <section
-          ref={fieldSectionRef}
-          className="state-field-section"
-          aria-label={`State Practice Model — current stage: ${stageName}`}
-        >
-          <div style={{ position: 'sticky', top: 0, height: '100vh' }}>
-            <StateField progress={scrollProgress} />
-          </div>
-        </section>
-        <div id="after-state-field" />
-
-        {/* ============================================================
-            SECTION 4 — NINE MINUTES OF NEUROPAUSE
-            Entry, Load, Peak.
+            SECTION 3 — ONE SYSTEM. NINE MINUTES.
+            Physical system + protocol together before the conceptual model.
             ============================================================ */}
         <section
           className="section"
@@ -294,7 +279,7 @@ export default function HomePage() {
                   marginBottom: 'var(--space-4)',
                 }}
               >
-                Neuropause™
+                The System
               </p>
               <h2
                 style={{
@@ -302,108 +287,116 @@ export default function HomePage() {
                   marginBottom: 'var(--space-4)',
                 }}
               >
-                Nine minutes. Three phases.
+                One system. Nine minutes.
               </h2>
               <p style={{
                 fontSize: 'var(--text-base)',
                 color: 'rgba(232, 224, 212, 0.55)',
                 lineHeight: 'var(--leading-relaxed)',
+                marginBottom: 'var(--space-6)',
               }}>
-                Neuropause structures the cold session into Entry, Load, and Peak.
-                Each phase shifts the attentional task — from orientation, to settling,
-                to observation.
+                The Ice Sack™ is a dry cold containment system.
+                You zip in, the cold contact begins, and you can exit whenever needed.
+                Neuropause™ structures the session into Entry, Load, and Peak.
               </p>
             </div>
 
             <NeuropauseTimeline />
-          </div>
-        </section>
 
-        {/* ============================================================
-            SECTION 5 — THE ICE SACK
-            Product, role, conversion.
-            ============================================================ */}
-        <section className="section" style={{ background: 'var(--color-bg)' }}>
-          <div className="container">
-            <div style={{ maxWidth: 'var(--max-width-prose)', marginBottom: 'var(--space-12)' }}>
-              <p
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 'var(--text-xs)',
-                  letterSpacing: '0.15em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-text-tertiary)',
-                  marginBottom: 'var(--space-4)',
-                }}
-              >
-                The System
-              </p>
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>
-                The Ice Sack
-              </h2>
-              <p className="text-prose">
-                A dry cold containment system by BHVD. No water. No filling.
-                The cold contact begins when you zip in. Neuropause provides a
-                nine-minute endpoint, with the option to exit sooner when needed.
-              </p>
-              <p className="text-prose" style={{ marginTop: 'var(--space-4)' }}>
-                The Ice Sack delivers the cold input that Neuropause structures.
-                It is designed around a defined, repeatable session format.
-              </p>
-            </div>
-
+            {/* Ownership disclosure + product link */}
             <div style={{
-              padding: 'var(--space-8)',
-              border: '1px solid var(--color-border)',
-              background: 'var(--color-bg-deep)',
-              maxWidth: '28rem',
+              marginTop: 'var(--space-12)',
+              paddingTop: 'var(--space-8)',
+              borderTop: '1px solid rgba(232, 224, 212, 0.1)',
+              maxWidth: 'var(--max-width-prose)',
             }}>
               <p style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: 'var(--text-xs)',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: 'var(--color-text-tertiary)',
-                marginBottom: 'var(--space-3)',
-              }}>
-                The Ice Sack™ Origin Edition
-              </p>
-              <p style={{
                 fontSize: 'var(--text-sm)',
-                color: 'var(--color-text-secondary)',
+                color: 'rgba(232, 224, 212, 0.4)',
                 lineHeight: 'var(--leading-relaxed)',
                 marginBottom: 'var(--space-6)',
               }}>
-                Dry cold containment for the Neuropause protocol.
+                The Cold Shift is published by BHVD, creator of The Ice Sack and Neuropause.
               </p>
               <a
                 href="https://www.theicesack.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
+                className="btn-secondary"
+                style={{
+                  borderColor: 'rgba(232, 224, 212, 0.2)',
+                  color: 'var(--color-bone)',
+                  fontSize: 'var(--text-xs)',
+                }}
               >
-                See the Ice Sack
+                See The Ice Sack
               </a>
-              <p style={{
-                fontSize: 'var(--text-xs)',
-                color: 'var(--color-text-tertiary)',
-                lineHeight: 'var(--leading-relaxed)',
-                marginTop: 'var(--space-4)',
-                fontFamily: 'var(--font-mono)',
-                letterSpacing: '0.02em',
-              }}>
-                BHVD participates in the controlled cold category through
-                The Ice Sack, its dry cold containment product. Cold Shift defines
-                the broader category and does not establish guaranteed outcomes
-                for any individual product.
-              </p>
             </div>
           </div>
         </section>
 
         {/* ============================================================
-            SECTION 6 — WHAT WE KNOW AND WHAT WE ARE INVESTIGATING
-            Evidence boundary + Question Beyond Cold + conversion.
+            SECTION 4 — STATE FIELD
+            Signal → Notice → Stay → Choose → Transition
+            The defining immersive interaction. Conceptual model label visible.
+            300vh desktop / 200vh mobile (unchanged).
+            ============================================================ */}
+        <section className="section" style={{
+          background: 'var(--color-bg)',
+          paddingBottom: 0,
+        }}>
+          <div className="container" style={{ maxWidth: 'var(--max-width-prose)', textAlign: 'center' }}>
+            <p
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: 'var(--text-xs)',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                color: 'var(--color-text-tertiary)',
+                marginBottom: 'var(--space-6)',
+              }}
+            >
+              BHVD Conceptual Model
+            </p>
+            <p
+              style={{
+                fontFamily: 'var(--font-editorial)',
+                fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
+                fontWeight: 500,
+                lineHeight: 'var(--leading-snug)',
+                marginBottom: 'var(--space-4)',
+              }}
+            >
+              Signal. Notice. Stay. Choose. Transition.
+            </p>
+            <p style={{
+              fontSize: 'var(--text-sm)',
+              color: 'var(--color-text-secondary)',
+              lineHeight: 'var(--leading-relaxed)',
+              maxWidth: '32rem',
+              margin: '0 auto',
+            }}>
+              A BHVD conceptual model for examining the space between
+              receiving a signal and choosing what comes next.
+            </p>
+          </div>
+        </section>
+
+        <section
+          ref={fieldSectionRef}
+          className="state-field-section"
+          aria-label={`State Practice Model — current stage: ${stageName}`}
+        >
+          <div style={{ position: 'sticky', top: 0, height: '100vh' }}>
+            <StateField progress={scrollProgress} />
+          </div>
+        </section>
+        <div id="after-state-field" />
+
+        {/* ============================================================
+            SECTION 5 — WE SEPARATE FACT FROM THESIS
+            Three categories: Known, Inferred, Untested.
+            Transfer honesty statement. Route to Evidence Library.
             ============================================================ */}
         <section
           className="section"
@@ -413,253 +406,166 @@ export default function HomePage() {
             padding: 'var(--space-32) var(--space-6)',
           }}
         >
-          <div className="container" style={{ maxWidth: 'var(--max-width-wide)' }}>
-            {/* Evidence boundary */}
-            <div style={{ marginBottom: 'var(--space-16)', maxWidth: 'var(--max-width-prose)' }}>
-              <h2
-                style={{
-                  color: 'var(--color-bone)',
-                  fontSize: 'clamp(1.5rem, 3vw, 2rem)',
-                  marginBottom: 'var(--space-8)',
-                }}
-              >
-                We separate fact from thesis.
-              </h2>
+          <div className="container" style={{ maxWidth: 'var(--max-width-prose)' }}>
+            <h2
+              style={{
+                color: 'var(--color-bone)',
+                fontSize: 'clamp(1.5rem, 3vw, 2rem)',
+                marginBottom: 'var(--space-10)',
+              }}
+            >
+              We separate fact from thesis.
+            </h2>
 
-              <ul style={{
-                listStyle: 'none',
-                padding: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 'var(--space-3)',
-                marginBottom: 'var(--space-8)',
-              }}>
-                {[
-                  'Established physiology.',
-                  'Research interpretation.',
-                  'BHVD conceptual models.',
-                  'Subjective experience.',
-                  'Verified product facts.',
-                ].map((item) => (
-                  <li
-                    key={item}
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 'var(--text-sm)',
-                      color: 'rgba(232, 224, 212, 0.6)',
-                      letterSpacing: '0.02em',
-                    }}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <p style={{
-                fontSize: 'var(--text-sm)',
-                color: 'rgba(232, 224, 212, 0.4)',
-                lineHeight: 'var(--leading-relaxed)',
-                marginBottom: 'var(--space-6)',
-              }}>
-                Each is treated differently because they are different.
-              </p>
-
-              <p style={{
-                fontSize: 'var(--text-sm)',
-                color: 'rgba(232, 224, 212, 0.45)',
-                lineHeight: 'var(--leading-relaxed)',
-                marginBottom: 'var(--space-4)',
-              }}>
-                Most published research concerns cold water immersion or
-                environmental exposure. Those findings provide context, not
-                automatic proof for showers, localized cooling, wearable systems,
-                cryotherapy, or dry cold containment. Product specific outcomes
-                require product specific evidence.
-              </p>
-
-              <p style={{
-                fontSize: 'var(--text-sm)',
-                color: 'rgba(232, 224, 212, 0.35)',
-                lineHeight: 'var(--leading-relaxed)',
-                marginBottom: 'var(--space-8)',
-              }}>
-                Controlled cold is not a medical treatment category. Products
-                should not be understood as diagnosing, treating, curing, or
-                preventing a medical condition unless the specific intended use
-                has appropriate evidence and regulatory authorization.
-              </p>
-
-              <div style={{ display: 'flex', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
-                <Link
-                  href="/evidence/"
-                  className="btn-secondary"
-                  style={{
-                    borderColor: 'rgba(232, 224, 212, 0.2)',
-                    color: 'var(--color-bone)',
-                    fontSize: 'var(--text-xs)',
-                  }}
-                >
-                  Explore the Evidence Standard
-                </Link>
-
-              </div>
-            </div>
-
-            {/* The question beyond cold */}
             <div style={{
-              marginBottom: 'var(--space-16)',
-              paddingTop: 'var(--space-12)',
-              borderTop: '1px solid rgba(232, 224, 212, 0.1)',
-              maxWidth: 'var(--max-width-prose)',
+              display: 'grid',
+              gap: 'var(--space-6)',
+              marginBottom: 'var(--space-10)',
             }}>
-              <p
-                style={{
+              <div style={{ paddingBottom: 'var(--space-6)', borderBottom: '1px solid rgba(232, 224, 212, 0.1)' }}>
+                <p style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: 'var(--text-xs)',
-                  letterSpacing: '0.15em',
+                  letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: 'rgba(232, 224, 212, 0.3)',
-                  marginBottom: 'var(--space-6)',
-                }}
-              >
-                The Question Beyond Cold
-              </p>
-
-              <p
-                style={{
-                  fontFamily: 'var(--font-editorial)',
-                  fontSize: 'clamp(1.125rem, 2.5vw, 1.375rem)',
-                  fontWeight: 400,
                   color: 'var(--color-bone)',
-                  lineHeight: 'var(--leading-snug)',
-                  marginBottom: 'var(--space-6)',
-                }}
-              >
-                Can repeated practice help someone notice a state earlier,
-                remain present with its signals, and choose a response
-                with greater awareness?
-              </p>
-
-              <p style={{
-                fontSize: 'var(--text-sm)',
-                color: 'rgba(232, 224, 212, 0.45)',
-                lineHeight: 'var(--leading-relaxed)',
-                marginBottom: 'var(--space-6)',
-              }}>
-                We do not yet know whether practice during controlled cold
-                transfers beyond the session. BHVD intends to investigate that question.
-              </p>
-
-              <StatementTypeBadge
-                type="bhvd_conceptual_model"
-                confidence="no_direct_evidence"
-                transfer="Untested"
-              />
-            </div>
-
-            {/* Compact field guide navigation */}
-            <div style={{
-              paddingTop: 'var(--space-12)',
-              borderTop: '1px solid rgba(232, 224, 212, 0.1)',
-              marginBottom: 'var(--space-16)',
-            }}>
-              <p style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: 'var(--text-xs)',
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: 'rgba(232, 224, 212, 0.3)',
-                marginBottom: 'var(--space-6)',
-              }}>
-                Explore the Field
-              </p>
-              <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: 'var(--space-3)',
-                marginBottom: 'var(--space-6)',
-              }}>
-                {CHAPTERS.map((ch) => (
-                  <Link
-                    key={ch.id}
-                    href={
-                      ch.slug === 'evidence'
-                        ? '/evidence/'
-                        : ch.slug === 'system'
-                          ? '/system/'
-                          : `/field/${ch.slug}/`
-                    }
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: 'var(--text-xs)',
-                      color: 'rgba(232, 224, 212, 0.4)',
-                      letterSpacing: '0.06em',
-                      padding: 'var(--space-2) var(--space-3)',
-                      border: '1px solid rgba(232, 224, 212, 0.1)',
-                      textDecoration: 'none',
-                      transition: 'border-color var(--duration-fast), color var(--duration-fast)',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(232, 224, 212, 0.3)';
-                      e.currentTarget.style.color = 'rgba(232, 224, 212, 0.7)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(232, 224, 212, 0.1)';
-                      e.currentTarget.style.color = 'rgba(232, 224, 212, 0.4)';
-                    }}
-                  >
-                    {String(ch.number).padStart(2, '0')} {ch.title}
-                  </Link>
-                ))}
+                  marginBottom: 'var(--space-2)',
+                }}>
+                  Known
+                </p>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'rgba(232, 224, 212, 0.5)',
+                  lineHeight: 'var(--leading-relaxed)',
+                }}>
+                  Evidence-supported physiology and verified product facts.
+                </p>
               </div>
-              <Link
-                href="/field/input/"
-                className="btn-primary"
-                style={{
-                  background: 'var(--color-bone)',
-                  color: 'var(--color-black)',
-                }}
-              >
-                Start with Controlled Cold
-              </Link>
+
+              <div style={{ paddingBottom: 'var(--space-6)', borderBottom: '1px solid rgba(232, 224, 212, 0.1)' }}>
+                <p style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 'var(--text-xs)',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-bone)',
+                  marginBottom: 'var(--space-2)',
+                }}>
+                  Inferred
+                </p>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'rgba(232, 224, 212, 0.5)',
+                  lineHeight: 'var(--leading-relaxed)',
+                }}>
+                  Interpretations that connect existing research without claiming direct product proof.
+                </p>
+              </div>
+
+              <div style={{ paddingBottom: 'var(--space-6)', borderBottom: '1px solid rgba(232, 224, 212, 0.1)' }}>
+                <p style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: 'var(--text-xs)',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: 'var(--color-bone)',
+                  marginBottom: 'var(--space-2)',
+                }}>
+                  Untested
+                </p>
+                <p style={{
+                  fontSize: 'var(--text-sm)',
+                  color: 'rgba(232, 224, 212, 0.5)',
+                  lineHeight: 'var(--leading-relaxed)',
+                }}>
+                  BHVD hypotheses requiring product-specific research.
+                </p>
+              </div>
             </div>
 
-            {/* Conversion actions */}
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 'var(--space-4)',
-              paddingTop: 'var(--space-12)',
-              borderTop: '1px solid rgba(232, 224, 212, 0.1)',
-              maxWidth: '24rem',
+            <p style={{
+              fontSize: 'var(--text-sm)',
+              color: 'rgba(232, 224, 212, 0.45)',
+              lineHeight: 'var(--leading-relaxed)',
+              marginBottom: 'var(--space-8)',
+              fontStyle: 'italic',
             }}>
-              <a
-                href="https://www.theicesack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-                style={{
-                  background: 'var(--color-bone)',
-                  color: 'var(--color-black)',
-                  textAlign: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                Explore the Ice Sack
-              </a>
-              <p style={{
-                fontSize: 'var(--text-sm)',
-                color: 'rgba(232, 224, 212, 0.4)',
-              }}>
-                Receive research, product, and field updates.{' '}
-                <a
-                  href="mailto:hello@bhvd.co"
-                  style={{ color: 'rgba(232, 224, 212, 0.55)', textDecoration: 'underline' }}
-                >
-                  Follow the field
-                </a>
-              </p>
-            </div>
+              We do not yet know whether practice during controlled cold
+              transfers beyond the session. BHVD intends to investigate that question.
+            </p>
+
+            <Link
+              href="/evidence/"
+              className="btn-secondary"
+              style={{
+                borderColor: 'rgba(232, 224, 212, 0.2)',
+                color: 'var(--color-bone)',
+                fontSize: 'var(--text-xs)',
+              }}
+            >
+              Explore the Evidence
+            </Link>
+          </div>
+        </section>
+
+        {/* ============================================================
+            SECTION 6 — THREE CLEAR PATHS
+            End with three actions only. No chapter directory.
+            ============================================================ */}
+        <section
+          className="section"
+          style={{
+            background: 'var(--color-bg)',
+            padding: 'var(--space-24) var(--space-6)',
+          }}
+        >
+          <div className="container" style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: 'var(--space-4)',
+            maxWidth: '24rem',
+            margin: '0 auto',
+          }}>
+            <Link
+              href="/field/input/"
+              className="btn-primary"
+              style={{
+                background: 'var(--color-bg-dark)',
+                color: 'var(--color-bone)',
+                width: '100%',
+                textAlign: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              Start with Controlled Cold
+            </Link>
+            <a
+              href="https://www.theicesack.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{
+                background: 'var(--color-bone)',
+                color: 'var(--color-black)',
+                width: '100%',
+                textAlign: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              Explore The Ice Sack
+            </a>
+            <Link
+              href="/evidence/"
+              className="btn-secondary"
+              style={{
+                width: '100%',
+                textAlign: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              Review the Evidence
+            </Link>
           </div>
         </section>
       </main>
