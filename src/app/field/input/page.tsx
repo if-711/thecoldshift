@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { StatementTypeBadge } from '@/components/EvidenceDrawer';
+import { StatementTypeBadge } from '@/components/StatementTypeBadge';
 
 export const metadata: Metadata = {
   title: 'Input — What Controlled Cold Is',

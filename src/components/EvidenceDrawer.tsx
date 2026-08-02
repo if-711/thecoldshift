@@ -223,7 +223,7 @@ export function EvidenceDrawer({
         aria-modal="true"
         aria-labelledby={titleId}
         aria-hidden={!isOpen}
-        {...(!isOpen ? { inert: '' } : {})}
+        {...(!isOpen ? { inert: true } : {})}
       >
         {/* Prototype banner */}
         {isPrototype && (
