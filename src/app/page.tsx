@@ -231,16 +231,20 @@ export default function HomePage() {
                 by its delivery method, exposure conditions, duration, and intended use.
               </p>
               <p className="text-prose">
-                Most cold exposure is improvised. An ice bath filled by estimation.
-                A cold shower with no defined duration. A plunge without a framework
-                for what to notice or when to stop.
+                Cold exposure is not one thing. Water immersion, cryotherapy,
+                localized cooling, environmental cold, and dry contact systems
+                differ in medium, temperature, contact, coverage, duration, and exit.
+                Controlled cold begins by defining those variables.
               </p>
               <p className="text-prose">
-                Controlled cold is different. The delivery is bounded: a defined medium,
-                a contained surface, and described exposure conditions. The duration is
-                structured: nine minutes, divided into three attentional phases. The
-                practice is deliberate and repeatable — not endurance,
-                not recovery, but attention.
+                People enter cold for different reasons. After training.
+                Before rest. To create a clear transition between one state and the next.
+                The reason can change. The session format remains defined.
+              </p>
+              <p className="text-prose">
+                Controlled cold adds a bounded delivery format and a structured
+                attentional practice. It does not depend on one universal use case
+                or one promised outcome.
               </p>
               <p className="text-prose">
                 The question is not how much cold you can tolerate.
@@ -344,8 +348,8 @@ export default function HomePage() {
               </p>
               <p className="text-prose" style={{ marginTop: 'var(--space-4)' }}>
                 The Ice Sack delivers the cold input that Neuropause structures.
-                It is designed for a consistent, repeatable session — the same
-                controlled environment every time.
+                It is designed for a consistent, repeatable session —
+                a defined, repeatable session format.
               </p>
             </div>
 
@@ -498,19 +502,7 @@ export default function HomePage() {
                 >
                   Explore the Evidence Standard
                 </Link>
-                <a
-                  href="https://bodymindstate.com/research"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary"
-                  style={{
-                    borderColor: 'rgba(232, 224, 212, 0.12)',
-                    color: 'rgba(232, 224, 212, 0.5)',
-                    fontSize: 'var(--text-xs)',
-                  }}
-                >
-                  Research on Body Mind State ↗
-                </a>
+
               </div>
             </div>
 
