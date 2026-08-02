@@ -374,7 +374,7 @@ export default function HomePage() {
                 Dry cold containment for the Neuropause protocol.
               </p>
               <a
-                href="https://bhvd.co"
+                href="https://www.theicesack.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -643,7 +643,7 @@ export default function HomePage() {
               maxWidth: '24rem',
             }}>
               <a
-                href="https://bhvd.co"
+                href="https://www.theicesack.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
