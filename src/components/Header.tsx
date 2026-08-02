@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -8,6 +8,7 @@ export function Header() {
   const pathname = usePathname();
   const isHome = pathname === '/';
   const [menuOpen, setMenuOpen] = useState(false);
+  const prevPathRef = useRef(pathname);
 
   const toggleMenu = useCallback(() => {
     setMenuOpen((prev) => !prev);
@@ -15,7 +16,10 @@ export function Header() {
 
   // Close menu on route change
   useEffect(() => {
-    setMenuOpen(false);
+    if (prevPathRef.current !== pathname) {
+      prevPathRef.current = pathname;
+      setMenuOpen(false);
+    }
   }, [pathname]);
 
   // Close on Escape

@@ -1,9 +1,8 @@
 'use client';
 
-import { useRef, useEffect, useCallback, useState } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import {
   getApprovedClaim,
-  getSourcesForClaim,
   STATEMENT_TYPE_LABELS,
   EVIDENCE_CONFIDENCE_LABELS,
   ICE_SACK_APPLICABILITY_LABELS,

@@ -60,7 +60,7 @@ export function NeuropauseTimeline() {
         role="group"
         aria-label="Neuropause 9-minute timeline"
       >
-        {PHASES.map((phase, i) => (
+        {PHASES.map((phase) => (
           <button
             key={phase.id}
             type="button"

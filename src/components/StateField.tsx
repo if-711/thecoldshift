@@ -48,7 +48,10 @@ export function StateField({ progress = 0 }: { progress?: number }) {
   const [reducedMotion, setReducedMotion] = useState(false);
   const [manualStage, setManualStage] = useState(0);
 
-  progressRef.current = progress;
+  // Sync progress prop to ref (outside render, inside effect)
+  useEffect(() => {
+    progressRef.current = progress;
+  }, [progress]);
 
   // Derive current stage
   const currentStage = reducedMotion

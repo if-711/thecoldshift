@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
@@ -25,18 +26,18 @@ export default function NotFound() {
               The page you are looking for does not exist or has been moved.
             </p>
             <div style={{ display: 'flex', gap: 'var(--space-4)', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a
+              <Link
                 href="/"
                 className="btn-primary"
               >
                 Return home
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/field/input/"
                 className="btn-secondary"
               >
                 Enter the Field
-              </a>
+              </Link>
             </div>
           </div>
         </section>
