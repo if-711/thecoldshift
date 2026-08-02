@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useSyncExternalStore } from 'react';
 
 /**
  * State Practice Model stages — the BHVD conceptual framework.
@@ -8,6 +8,58 @@ import { useRef, useEffect, useState } from 'react';
  */
 const STAGES = ['SIGNAL', 'NOTICE', 'STAY', 'CHOOSE', 'TRANSITION'] as const;
 
+// Reduced motion media query via useSyncExternalStore (React 19 pattern)
+const reducedMotionQuery =
+  typeof window !== 'undefined'
+    ? window.matchMedia('(prefers-reduced-motion: reduce)')
+    : null;
+
+function subscribeReducedMotion(callback: () => void) {
+  reducedMotionQuery?.addEventListener('change', callback);
+  return () => reducedMotionQuery?.removeEventListener('change', callback);
+}
+
+function getReducedMotionSnapshot() {
+  return reducedMotionQuery?.matches ?? false;
+}
+
+function getReducedMotionServerSnapshot() {
+  return false;
+}
+
+/**
+ * StateField — Full-screen immersive scroll visualization.
+ *
+ * Implements:
+ * 1. BHVD State Practice Model — Signal → Notice → Stay → Choose → Transition.
+ * 2. WebGL particle field synchronized to scroll progress.
+ * 3. Reduced-motion: static stage cards with manual navigation.
+ * 4. WebGL fallback: CSS-only gradient field.
+ * 5. Skip interaction button.
+ * 6. No animation when outside viewport.
+ */
+export function StateField({ progress = 0 }: { progress?: number }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const frameRef = useRef<number>(0);
+  const progressRef = useRef(progress);
+  const [webglSupported, setWebglSupported] = useState(true);
+  const reducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    getReducedMotionServerSnapshot,
+  );
+  const [manualStage, setManualStage] = useState(0);
+
+  // Sync progress prop to ref (outside render, inside effect)
+  useEffect(() => {
+    progressRef.current = progress;
+  }, [progress]);
+
+  // Derive current stage
+  const currentStage = reducedMotion
+    ? manualStage
+    : Math.min(Math.floor(progress * STAGES.length), STAGES.length - 1);
 const STAGE_DESCRIPTIONS = [
   'A sensory event becomes noticeable.',
   'Attention identifies what is happening.',
@@ -24,48 +76,6 @@ const STAGE_COLORS = [
   { r: 0.30, g: 0.50, b: 0.75 },  // CHOOSE — focused
   { r: 0.55, g: 0.70, b: 0.80 },  // TRANSITION — clarity
 ] as const;
-
-/**
- * StateField — The State Practice Model visualization.
- *
- * This IS the State Practice Model interaction on the homepage.
- * One defining immersive experience, not two separate components.
- *
- * Technical fixes:
- * 1. Three.js initializes once, progress via ref.
- * 2. Reduced motion: static stages with manual control.
- * 3. Deterministic colors, no Math.random().
- * 4. Capped DPR (max 2).
- * 5. Skip button always visible.
- * 6. No animation when outside viewport.
- */
-export function StateField({ progress = 0 }: { progress?: number }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const frameRef = useRef<number>(0);
-  const progressRef = useRef(progress);
-  const [webglSupported, setWebglSupported] = useState(true);
-  const [reducedMotion, setReducedMotion] = useState(false);
-  const [manualStage, setManualStage] = useState(0);
-
-  // Sync progress prop to ref (outside render, inside effect)
-  useEffect(() => {
-    progressRef.current = progress;
-  }, [progress]);
-
-  // Derive current stage
-  const currentStage = reducedMotion
-    ? manualStage
-    : Math.min(Math.floor(progress * STAGES.length), STAGES.length - 1);
-
-  // Check reduced motion preference
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
-  }, []);
 
   // Initialize Three.js ONCE (only when motion is allowed)
   useEffect(() => {
@@ -270,7 +280,6 @@ export function StateField({ progress = 0 }: { progress?: number }) {
       cleanupPromise?.then((fn) => fn?.());
       renderer?.dispose?.();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reducedMotion]);
 
   // Static stages for reduced motion / fallback
