@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { StatementTypeBadge } from '@/components/StatementTypeBadge';
+import { ChapterFlow } from '@/components/ChapterFlow';
 
 export const metadata: Metadata = {
   title: 'Notice | Attention to Internal and Bodily Signals',
@@ -54,10 +55,7 @@ export default function NoticePage() {
           </p>
         </div>
 
-        <nav style={{ marginTop: 'var(--space-16)', paddingTop: 'var(--space-8)', borderTop: '1px solid var(--color-border)', display: 'flex', justifyContent: 'space-between' }}>
-          <a href="/field/signal/" style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>← Signal</a>
-          <a href="/field/choice/" style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>Next: Choice →</a>
-        </nav>
+        <ChapterFlow currentChapterId="notice" />
       </div>
     </article>
   );

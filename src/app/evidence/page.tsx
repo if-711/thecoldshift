@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { ChapterFlow } from '@/components/ChapterFlow';
 import { EvidenceLibraryInteractive } from '@/components/EvidenceLibraryInteractive';
 import {
   claims,
@@ -356,6 +357,8 @@ export default function EvidencePage() {
               </dl>
             </section>
           </div>
+
+          <ChapterFlow currentChapterId="evidence" />
         </article>
       </main>
       <Footer />

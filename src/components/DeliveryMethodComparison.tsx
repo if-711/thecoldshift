@@ -31,7 +31,7 @@ const METHODS: DeliveryMethod[] = [
   },
   {
     id: 'wbc',
-    name: 'Cold Gas Exposure',
+    name: 'Cryotherapy',
     mechanism: 'Gas convection',
     medium: 'Cooled air or nitrogen vapor',
     contact: 'Indirect through gas',

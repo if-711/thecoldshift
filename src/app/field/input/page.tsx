@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { StatementTypeBadge } from '@/components/StatementTypeBadge';
 import { DeliveryMethodComparison } from '@/components/DeliveryMethodComparison';
+import { ChapterFlow } from '@/components/ChapterFlow';
 
 export const metadata: Metadata = {
   title: 'Controlled Cold | Delivery Conditions and Evidence Boundaries',
@@ -78,27 +79,7 @@ export default function InputPage() {
         </div>
 
         {/* Chapter navigation */}
-        <nav
-          style={{
-            marginTop: 'var(--space-16)',
-            paddingTop: 'var(--space-8)',
-            borderTop: '1px solid var(--color-border)',
-            display: 'flex',
-            justifyContent: 'flex-end',
-          }}
-        >
-          <a
-            href="/field/signal/"
-            style={{
-              fontFamily: 'var(--font-editorial)',
-              fontSize: 'var(--text-sm)',
-              color: 'var(--color-text-secondary)',
-              textDecoration: 'none',
-            }}
-          >
-            Next: Signal →
-          </a>
-        </nav>
+        <ChapterFlow currentChapterId="input" />
       </div>
     </article>
   );

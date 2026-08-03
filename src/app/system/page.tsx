@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { ChapterFlow } from '@/components/ChapterFlow';
 
 export const metadata: Metadata = {
   title: 'The Ice Sack | A Wearable Dry Cold System',
@@ -559,6 +560,10 @@ export default function SystemPage() {
               </p>
             </div>
           </section>
+
+          <div className="container" style={{ maxWidth: 'var(--max-width-prose)' }}>
+            <ChapterFlow currentChapterId="system" />
+          </div>
         </article>
       </main>
       <Footer />

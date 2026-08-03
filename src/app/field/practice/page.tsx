@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { StatementTypeBadge } from '@/components/StatementTypeBadge';
+import { ChapterFlow } from '@/components/ChapterFlow';
 
 export const metadata: Metadata = {
   title: 'Neuropause | A BHVD Practice Format',
@@ -112,10 +113,7 @@ export default function PracticePage() {
           </div>
         </div>
 
-        <nav style={{ marginTop: 'var(--space-16)', paddingTop: 'var(--space-8)', borderTop: '1px solid var(--color-border)', display: 'flex', justifyContent: 'space-between' }}>
-          <a href="/field/choice/" style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>← Choice</a>
-          <a href="/evidence/" style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>Next: Evidence →</a>
-        </nav>
+        <ChapterFlow currentChapterId="practice" />
       </div>
     </article>
   );

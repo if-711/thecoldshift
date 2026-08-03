@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ChapterFlow } from '@/components/ChapterFlow';
 
 export const metadata: Metadata = {
   title: 'Signal | How the Body Detects Cold',
@@ -62,14 +63,7 @@ export default function SignalPage() {
           </p>
         </div>
 
-        <nav style={{ marginTop: 'var(--space-16)', paddingTop: 'var(--space-8)', borderTop: '1px solid var(--color-border)', display: 'flex', justifyContent: 'space-between' }}>
-          <a href="/field/input/" style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
-            ← Controlled Cold
-          </a>
-          <a href="/field/notice/" style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
-            Next: Notice →
-          </a>
-        </nav>
+        <ChapterFlow currentChapterId="signal" />
       </div>
     </article>
   );

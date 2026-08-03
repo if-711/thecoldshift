@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { StatementTypeBadge } from '@/components/StatementTypeBadge';
+import { ChapterFlow } from '@/components/ChapterFlow';
 
 export const metadata: Metadata = {
   title: 'Choice | Observing the Response to Cold',
@@ -63,10 +64,7 @@ export default function ChoicePage() {
           </div>
         </div>
 
-        <nav style={{ marginTop: 'var(--space-16)', paddingTop: 'var(--space-8)', borderTop: '1px solid var(--color-border)', display: 'flex', justifyContent: 'space-between' }}>
-          <a href="/field/notice/" style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>← Notice</a>
-          <a href="/field/practice/" style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>Next: The Practice →</a>
-        </nav>
+        <ChapterFlow currentChapterId="choice" />
       </div>
     </article>
   );
