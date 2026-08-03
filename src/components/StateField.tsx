@@ -352,17 +352,17 @@ const STAGE_COLORS = [
         <>
           <div style={{
             position: 'absolute',
-            bottom: 'var(--space-12)',
+            bottom: 0,
             left: 0,
             right: 0,
-            padding: 'var(--space-8) var(--space-6) var(--space-4)',
-            background: 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.5) 60%, transparent 100%)',
+            padding: 'var(--space-12) var(--space-6) var(--space-8)',
+            background: 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 50%, transparent 100%)',
             pointerEvents: 'none',
             display: 'flex',
             flexDirection: 'column',
             gap: 'var(--space-3)',
           }}>
-            <div style={{ display: 'flex', gap: 'var(--space-1)' }}>
+            <div style={{ display: 'flex', gap: 'var(--space-1)', flexWrap: 'wrap' }}>
               {STAGES.map((stage, i) => (
                 <span
                   key={stage}
@@ -384,7 +384,7 @@ const STAGE_COLORS = [
             <p style={{
               fontFamily: 'var(--font-body)',
               fontSize: 'var(--text-sm)',
-              color: 'rgba(255,255,255,0.8)',
+              color: 'rgba(255,255,255,0.85)',
               maxWidth: '24rem',
               lineHeight: 'var(--leading-relaxed)',
               transition: 'opacity var(--duration-normal)',
