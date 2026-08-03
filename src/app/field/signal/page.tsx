@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Signal — How the Body Detects Temperature',
+  title: 'Signal | How the Body Detects Cold',
   description:
-    'Thermoreception, TRPM8, and the difference between skin temperature, perceived cold, and core temperature.',
+    'How temperature-sensitive sensory pathways detect cold at the skin and transmit information toward the central nervous system.',
 };
 
 export default function SignalPage() {
@@ -15,10 +15,12 @@ export default function SignalPage() {
             Chapter 02
           </span>
           <h1 style={{ marginTop: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-            Signal
+            Cold begins as sensory information.
           </h1>
           <p className="text-prose">
-            How the body detects and transmits temperature.
+            Temperature-sensitive sensory pathways detect changes at the skin and transmit
+            information toward the central nervous system. TRPM8 contributes to detecting cool
+            temperatures and menthol.
           </p>
         </header>
 
@@ -34,33 +36,23 @@ export default function SignalPage() {
             becomes aware of temperature changes in the external environment.
           </p>
 
-          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', marginTop: 'var(--space-4)' }}>
-            Cutaneous thermoreception is established physiology. Cold-sensitive neurons
-            primarily express the TRPM8 ion channel, which activates at skin temperatures
-            below approximately 28 °C and increases firing rate as temperature decreases.
-            Source records pending — evidence ledger in progress.
-          </p>
-
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-            Skin temperature is not core temperature.
+            Skin temperature and core temperature are different measurements.
           </h2>
 
           <p>
-            The temperature your skin registers during cold exposure is not the same as your
-            body&apos;s core temperature. Localized cold application changes skin temperature
-            rapidly, but core temperature changes slowly and requires sustained, extensive
-            cooling.
+            Skin temperature and core temperature are different measurements. A cold surface
+            can change local skin temperature without establishing a meaningful change in core
+            temperature. The magnitude and timing depend on the exposure conditions.
           </p>
 
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-            The signal is not the interpretation.
+            Detection is not perception.
           </h2>
 
           <p>
-            When TRPM8 channels activate, they send a signal. That signal arrives in the
-            brain. But what happens next — the feeling of discomfort, the urge to remove the
-            cold, the interpretation of whether the sensation is tolerable — involves
-            processing well beyond thermoreception.
+            Detection is not the same as perception. Discomfort, urgency, tolerability, and
+            meaning arise from additional physiological and cognitive processing.
           </p>
 
           <p>
@@ -72,7 +64,7 @@ export default function SignalPage() {
 
         <nav style={{ marginTop: 'var(--space-16)', paddingTop: 'var(--space-8)', borderTop: '1px solid var(--color-border)', display: 'flex', justifyContent: 'space-between' }}>
           <a href="/field/input/" style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
-            ← Input
+            ← Controlled Cold
           </a>
           <a href="/field/notice/" style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', textDecoration: 'none' }}>
             Next: Notice →

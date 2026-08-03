@@ -4,15 +4,14 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'The Ice Sack | A Dry Cold Containment System',
+  title: 'The Ice Sack | A Wearable Dry Cold System',
   description:
-    'How The Ice Sack delivers a defined, nine-minute dry cold session for the Neuropause Protocol.',
+    'Physical product description for The Ice Sack by BHVD. Specifications are manufacturer supplied and do not claim health outcomes.',
 };
 
 const publishedSpecifications = [
-  ['Delivery format', 'Dry cold containment'],
+  ['Delivery format', 'Wearable dry cold'],
   ['Cold core', 'Hex-grid phase-change material'],
-  ['Session format', 'Nine minutes · Entry, Load, Peak'],
   ['Protocol access', 'NFC tap to guided audio'],
   ['Preparation', 'Freeze fully for five hours'],
   ['Cold reserve', 'Rated for 15+ minutes at room temperature'],
@@ -29,18 +28,18 @@ const systemSequence = [
   },
   {
     number: '02',
-    title: 'Contain',
-    body: 'Zip into the soft outer shell. The hex-grid core places dry cold across a broad area without water, filling, or drainage.',
+    title: 'Wear',
+    body: 'The outer shell places dry cold across a broad area without water, filling, or drainage.',
   },
   {
     number: '03',
     title: 'Practice',
-    body: 'Tap the NFC mark to begin Neuropause. Entry, Load, and Peak organize attention across one defined nine-minute session.',
+    body: 'Neuropause provides an optional attentional format during the session. Session duration and stop conditions are governed by the product instructions for use.',
   },
   {
     number: '04',
     title: 'Exit',
-    body: 'End at nine minutes or sooner when needed. Unzip, rewarm naturally, and notice what changed without prescribing what you should feel.',
+    body: 'End the session. Product instructions for use specify stop conditions and rewarming guidance.',
   },
 ] as const;
 
@@ -116,8 +115,8 @@ export default function SystemPage() {
                   lineHeight: 'var(--leading-relaxed)',
                 }}
               >
-                The Ice Sack is the physical system behind Neuropause. It turns cold
-                into a defined, dry, time-bound practice.
+                The Ice Sack is BHVD’s wearable dry cold system.
+                Neuropause is the accompanying practice format.
               </p>
             </div>
           </header>
@@ -151,8 +150,8 @@ export default function SystemPage() {
               </div>
               <div className="text-prose">
                 <p>
-                  Cold is the sensory input. Neuropause provides the attentional
-                  structure. The Ice Sack brings the two together in one bounded session.
+                  Cold is the physical input. Neuropause provides an optional attentional
+                  format. The Ice Sack provides a dry cold delivery system.
                 </p>
                 <p>
                   Its role is specific: provide broad dry cold contact, hold the session

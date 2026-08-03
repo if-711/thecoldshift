@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 
 export function Header() {
   const pathname = usePathname();
-  const isHome = pathname === '/';
   const [menuOpen, setMenuOpen] = useState(false);
   const prevPathRef = useRef(pathname);
 
@@ -33,8 +32,6 @@ export function Header() {
     }
   }, [menuOpen]);
 
-  const linkColor = isHome ? 'rgba(232, 224, 212, 0.6)' : 'var(--color-text-tertiary)';
-
   return (
     <header
       style={{
@@ -43,9 +40,10 @@ export function Header() {
         left: 0,
         right: 0,
         zIndex: 50,
-        background: isHome ? 'transparent' : 'rgba(245, 245, 245, 0.92)',
-        backdropFilter: isHome ? 'none' : 'blur(12px)',
-        borderBottom: isHome ? 'none' : '1px solid var(--color-border)',
+        background: 'rgba(6, 10, 16, 0.8)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: '1px solid rgba(232, 224, 212, 0.06)',
         transition: 'background var(--duration-normal) var(--ease-out)',
       }}
     >
@@ -64,7 +62,7 @@ export function Header() {
             fontWeight: 600,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
-            color: isHome ? 'var(--color-bone)' : 'var(--color-text)',
+            color: 'var(--color-bone)',
             textDecoration: 'none',
           }}
           aria-label="The Cold Shift — Home"
@@ -78,18 +76,24 @@ export function Header() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: 'var(--space-6)',
+            gap: 'var(--space-5)',
           }}
           aria-label="Main navigation"
         >
-          <Link href="/field/input/" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.08em', textTransform: 'uppercase', color: linkColor, textDecoration: 'none', transition: 'color var(--duration-fast)' }}>
-            Field
+          <Link href="/field/input/" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(232, 224, 212, 0.5)', textDecoration: 'none', transition: 'color var(--duration-fast)' }}>
+            Controlled Cold
           </Link>
-          <Link href="/evidence/" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.08em', textTransform: 'uppercase', color: linkColor, textDecoration: 'none', transition: 'color var(--duration-fast)' }}>
+          <Link href="/field/practice/" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(232, 224, 212, 0.5)', textDecoration: 'none', transition: 'color var(--duration-fast)' }}>
+            The Practice
+          </Link>
+          <Link href="/evidence/" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(232, 224, 212, 0.5)', textDecoration: 'none', transition: 'color var(--duration-fast)' }}>
             Evidence
           </Link>
-          <Link href="/safety/" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.08em', textTransform: 'uppercase', color: linkColor, textDecoration: 'none', transition: 'color var(--duration-fast)' }}>
+          <Link href="/safety/" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(232, 224, 212, 0.5)', textDecoration: 'none', transition: 'color var(--duration-fast)' }}>
             Safety
+          </Link>
+          <Link href="/system/" style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(232, 224, 212, 0.5)', textDecoration: 'none', transition: 'color var(--duration-fast)' }}>
+            The Ice Sack
           </Link>
         </nav>
 
@@ -107,7 +111,7 @@ export function Header() {
             border: 'none',
             padding: 'var(--space-2)',
             cursor: 'pointer',
-            color: isHome ? 'var(--color-bone)' : 'var(--color-text)',
+            color: 'var(--color-bone)',
           }}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
@@ -139,24 +143,28 @@ export function Header() {
           top: '3.5rem',
           left: 0,
           right: 0,
-          background: isHome ? 'rgba(10, 10, 10, 0.95)' : 'rgba(245, 245, 245, 0.98)',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid var(--color-border)',
+          background: 'rgba(6, 10, 16, 0.95)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderBottom: '1px solid rgba(232, 224, 212, 0.06)',
           padding: 'var(--space-4) 0',
           flexDirection: 'column',
         }}
       >
-        <Link href="/field/input/" style={{ display: 'block', padding: 'var(--space-3) var(--space-6)', fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', letterSpacing: '0.08em', textTransform: 'uppercase', color: linkColor, textDecoration: 'none' }}>
-          Field
+        <Link href="/field/input/" style={{ display: 'block', padding: 'var(--space-3) var(--space-6)', fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(232, 224, 212, 0.6)', textDecoration: 'none' }}>
+          Controlled Cold
         </Link>
-        <Link href="/evidence/" style={{ display: 'block', padding: 'var(--space-3) var(--space-6)', fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', letterSpacing: '0.08em', textTransform: 'uppercase', color: linkColor, textDecoration: 'none' }}>
+        <Link href="/field/practice/" style={{ display: 'block', padding: 'var(--space-3) var(--space-6)', fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(232, 224, 212, 0.6)', textDecoration: 'none' }}>
+          The Practice
+        </Link>
+        <Link href="/evidence/" style={{ display: 'block', padding: 'var(--space-3) var(--space-6)', fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(232, 224, 212, 0.6)', textDecoration: 'none' }}>
           Evidence
         </Link>
-        <Link href="/safety/" style={{ display: 'block', padding: 'var(--space-3) var(--space-6)', fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', letterSpacing: '0.08em', textTransform: 'uppercase', color: linkColor, textDecoration: 'none' }}>
+        <Link href="/safety/" style={{ display: 'block', padding: 'var(--space-3) var(--space-6)', fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(232, 224, 212, 0.6)', textDecoration: 'none' }}>
           Safety
         </Link>
-        <Link href="/evidence/claims/" style={{ display: 'block', padding: 'var(--space-3) var(--space-6)', fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', letterSpacing: '0.08em', textTransform: 'uppercase', color: linkColor, textDecoration: 'none' }}>
-          Claim Ledger
+        <Link href="/system/" style={{ display: 'block', padding: 'var(--space-3) var(--space-6)', fontFamily: 'var(--font-mono)', fontSize: 'var(--text-sm)', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(232, 224, 212, 0.6)', textDecoration: 'none' }}>
+          The Ice Sack
         </Link>
       </nav>
     </header>

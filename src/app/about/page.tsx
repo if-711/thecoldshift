@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'About BHVD',
-  description: 'The Cold Shift is a BHVD field project. Learn about the organization behind the platform.',
+  description: 'The Cold Shift is published by BHVD. This page discloses the ownership relationship.',
 };
 
 export default function AboutPage() {
@@ -20,18 +20,15 @@ export default function AboutPage() {
 
             <div className="text-prose">
               <p>
-                The Cold Shift is a BHVD field project.
+                The Cold Shift is published by BHVD.
               </p>
               <p>
-                BHVD develops tools and frameworks for structured sensory practice.
-                The Ice Sack is the first physical system developed within this framework.
-                Neuropause is the original nine-minute guided protocol.
+                BHVD developed The Ice Sack and the Neuropause practice format.
+                The Cold Shift is the field guide: it documents what research supports,
+                what BHVD proposes, and what remains untested about controlled cold
+                as a category.
               </p>
-              <p>
-                The Cold Shift is the education platform — a public field guide that documents
-                what is known, what is hypothesized, and what remains unresolved about
-                controlled cold as a deliberate practice input.
-              </p>
+              {/* TODO: OWNER — Confirm legal entity name (BHVD vs BHVD Labs), registration jurisdiction, and registered agent or principal address */}
 
               <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
                 Ownership and conflicts of interest
@@ -76,7 +73,7 @@ export default function AboutPage() {
                   <a href="https://www.theicesack.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: '3px' }}>
                     The Ice Sack
                   </a>{' '}
-                  — Dry cold containment system
+                  — Wearable dry cold system
                 </li>
               </ul>
             </div>

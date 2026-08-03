@@ -8,32 +8,38 @@
    1. TOKENS
    ---------------------------------------------------------------- */
 :root {
-  /* Palette */
-  --color-black: #0a0a0a;
+  /* Palette — aligned with The Ice Sack dark premium aesthetic */
+  --color-black: #060a10;
+  --color-deep: #0a0f1a;
+  --color-surface: #111827;
+  --color-surface-raised: #1a2236;
   --color-bone: #e8e0d4;
-  --color-mineral: #6b6b6b;
-  --color-cold-white: #f5f5f5;
-  --color-spectral: #3a7bd5;
-  --color-spectral-dim: rgba(58, 123, 213, 0.12);
-  --color-spectral-glow: rgba(58, 123, 213, 0.25);
+  --color-mineral: #6b7280;
+  --color-cold-white: #f0f1f3;
+  --color-spectral: #3b82f6;
+  --color-spectral-bright: #60a5fa;
+  --color-spectral-dim: rgba(59, 130, 246, 0.12);
+  --color-spectral-glow: rgba(59, 130, 246, 0.25);
+  --color-spectral-subtle: rgba(59, 130, 246, 0.06);
 
-  /* Semantic */
-  --color-bg: var(--color-cold-white);
-  --color-bg-deep: #f0ede8;
+  /* Semantic — dark-first */
+  --color-bg: var(--color-deep);
+  --color-bg-deep: var(--color-black);
   --color-bg-dark: var(--color-black);
-  --color-text: #1a1a1a;
-  --color-text-secondary: #4a4a4a;
-  --color-text-tertiary: var(--color-mineral);
+  --color-bg-section: var(--color-surface);
+  --color-text: var(--color-bone);
+  --color-text-secondary: rgba(232, 224, 212, 0.65);
+  --color-text-tertiary: rgba(232, 224, 212, 0.4);
   --color-text-on-dark: var(--color-bone);
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-border-strong: rgba(0, 0, 0, 0.16);
+  --color-border: rgba(232, 224, 212, 0.08);
+  --color-border-strong: rgba(232, 224, 212, 0.16);
 
-  /* Evidence classifications */
-  --color-established: #2d6a4f;
-  --color-supported: #457b9d;
-  --color-emerging: #9a6c38;
-  --color-hypothesis: #7b5ea7;
-  --color-subjective: #6b6b6b;
+  /* Evidence classifications — adjusted for dark backgrounds */
+  --color-established: #34d399;
+  --color-supported: #60a5fa;
+  --color-emerging: #fbbf24;
+  --color-hypothesis: #a78bfa;
+  --color-subjective: #9ca3af;
 
   /* Typography */
   --font-editorial: 'Space Grotesk', system-ui, sans-serif;
@@ -63,8 +69,10 @@
   --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1rem;
+  --space-5: 1.25rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
+  --space-10: 2.5rem;
   --space-12: 3rem;
   --space-16: 4rem;
   --space-24: 6rem;
@@ -122,6 +130,9 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   min-height: 100vh;
+  /* Subtle noise overlay for depth */
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(59, 130, 246, 0.04) 0%, transparent 50%);
 }
 
 img,
@@ -147,7 +158,7 @@ button {
 
 /* Focus states (WCAG 2.2 AA) */
 :focus-visible {
-  outline: 2px solid var(--color-spectral);
+  outline: 2px solid var(--color-spectral-bright);
   outline-offset: 2px;
 }
 
@@ -194,6 +205,24 @@ h4 { font-size: var(--text-2xl); }
 
 .text-prose p + p {
   margin-top: var(--space-6);
+}
+
+/* ----------------------------------------------------------------
+   GLASSMORPHISM CARD — premium translucent container
+   ---------------------------------------------------------------- */
+.glass-card {
+  background: rgba(17, 24, 39, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(232, 224, 212, 0.08);
+  border-radius: 12px;
+  transition: border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.06);
 }
 
 /* ----------------------------------------------------------------
@@ -305,13 +334,13 @@ h4 { font-size: var(--text-2xl); }
 }
 
 .chapter-nav-item:hover {
-  color: var(--color-text);
-  background: var(--color-border);
+  color: var(--color-bone);
+  background: rgba(232, 224, 212, 0.06);
 }
 
 .chapter-nav-item[aria-current="true"] {
-  color: var(--color-text);
-  background: var(--color-border-strong);
+  color: var(--color-bone);
+  background: rgba(232, 224, 212, 0.1);
 }
 
 .chapter-nav-number {
@@ -344,8 +373,8 @@ h4 { font-size: var(--text-2xl); }
 }
 
 .mode-toggle-option[aria-pressed="true"] {
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: var(--color-bone);
+  color: var(--color-black);
 }
 
 /* ----------------------------------------------------------------
@@ -390,8 +419,8 @@ h4 { font-size: var(--text-2xl); }
   bottom: 0;
   width: 100%;
   max-width: 28rem;
-  background: var(--color-bg);
-  border-left: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-left: 1px solid rgba(232, 224, 212, 0.08);
   z-index: 100;
   transform: translateX(100%);
   transition: transform var(--duration-normal) var(--ease-out);
@@ -465,14 +494,16 @@ h4 { font-size: var(--text-2xl); }
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-bg);
-  background: var(--color-text);
+  color: var(--color-black);
+  background: var(--color-bone);
   border: 1px solid transparent;
+  border-radius: 6px;
   transition: all var(--duration-normal) var(--ease-out);
 }
 
 .btn-primary:hover {
-  background: var(--color-text-secondary);
+  background: #fff;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
 }
 
 .btn-secondary {
@@ -485,14 +516,41 @@ h4 { font-size: var(--text-2xl); }
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--color-bone);
   background: transparent;
-  border: 1px solid var(--color-border-strong);
+  border: 1px solid rgba(232, 224, 212, 0.2);
+  border-radius: 6px;
   transition: all var(--duration-normal) var(--ease-out);
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-text);
+  border-color: var(--color-spectral);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+/* Spectral accent button — ice-blue glow */
+.btn-spectral {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  font-family: var(--font-editorial);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-spectral), #2563eb);
+  border: none;
+  border-radius: 6px;
+  transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.btn-spectral:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  transform: translateY(-1px);
 }
 
 /* ----------------------------------------------------------------
@@ -502,8 +560,8 @@ h4 { font-size: var(--text-2xl); }
   padding: var(--space-3) 0;
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  color: var(--color-text-tertiary);
-  border-top: 1px solid var(--color-border);
+  color: rgba(232, 224, 212, 0.35);
+  border-top: 1px solid rgba(232, 224, 212, 0.08);
   letter-spacing: 0.02em;
 }
 
@@ -569,7 +627,7 @@ h4 { font-size: var(--text-2xl); }
 }
 
 .claim-ledger tr:hover td {
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(59, 130, 246, 0.04);
 }
 
 /* ----------------------------------------------------------------
@@ -596,8 +654,8 @@ h4 { font-size: var(--text-2xl); }
   left: var(--space-4);
   z-index: 100;
   padding: var(--space-2) var(--space-4);
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: var(--color-bone);
+  color: var(--color-black);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   text-decoration: none;
@@ -783,9 +841,9 @@ h4 { font-size: var(--text-2xl); }
   padding: var(--space-3) var(--space-6);
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  color: var(--color-text-tertiary);
-  background: var(--color-bg-deep);
-  border-top: 1px solid var(--color-border);
+  color: rgba(232, 224, 212, 0.3);
+  background: var(--color-black);
+  border-top: 1px solid rgba(232, 224, 212, 0.06);
   text-align: center;
   letter-spacing: 0.02em;
 }
@@ -852,7 +910,7 @@ h4 { font-size: var(--text-2xl); }
 .kiu-panel {
   padding: var(--space-6);
   border-left: 3px solid var(--color-spectral);
-  background: var(--color-bg-deep);
+  background: rgba(59, 130, 246, 0.04);
 }
 
 /* ----------------------------------------------------------------
@@ -882,15 +940,15 @@ h4 { font-size: var(--text-2xl); }
 }
 
 .delivery-tab[data-active="true"] {
-  background: var(--color-text);
-  color: var(--color-bg);
-  border-color: var(--color-text);
+  background: var(--color-bone);
+  color: var(--color-black);
+  border-color: var(--color-bone);
 }
 
 .delivery-panel {
   padding: var(--space-6);
-  border: 1px solid var(--color-border);
-  background: var(--color-bg);
+  border: 1px solid rgba(232, 224, 212, 0.08);
+  background: var(--color-surface);
 }
 
 .delivery-meta {
@@ -918,8 +976,8 @@ h4 { font-size: var(--text-2xl); }
 .delivery-icesack-pending {
   margin-top: var(--space-6);
   padding: var(--space-4);
-  border: 1px dashed var(--color-border);
-  background: var(--color-bg-deep);
+  border: 1px dashed rgba(232, 224, 212, 0.12);
+  background: rgba(59, 130, 246, 0.04);
 }
 
 /* ----------------------------------------------------------------
@@ -948,7 +1006,7 @@ h4 { font-size: var(--text-2xl); }
 }
 
 .mode-toggle-label[data-active="true"] {
-  color: var(--color-bg);
+  color: var(--color-black);
 }
 
 .mode-toggle-thumb {
@@ -957,7 +1015,7 @@ h4 { font-size: var(--text-2xl); }
   left: 2px;
   width: calc(50% - 2px);
   height: calc(100% - 4px);
-  background: var(--color-text);
+  background: var(--color-bone);
   transition: transform var(--duration-normal) var(--ease-out);
 }
 
@@ -979,4 +1037,280 @@ h4 { font-size: var(--text-2xl); }
 .evidence-only[data-visible="true"] {
   max-height: 200rem;
   opacity: 1;
+}
+
+/* ================================================================
+   DESIGN ELEVATION — MOTION & NARRATIVE SYSTEM
+   Every motion communicates transition, dependency, uncertainty,
+   or constraint. No decorative animation.
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   24. SIGNAL PULSE — propagation indicator
+   ---------------------------------------------------------------- */
+@keyframes signal-pulse {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.8); }
+}
+
+.signal-pulse {
+  animation: signal-pulse 3s var(--ease-in-out) infinite;
+}
+
+/* ----------------------------------------------------------------
+   25. THERMAL SHIMMER — subtle background warmth indicator
+   ---------------------------------------------------------------- */
+@keyframes thermal-drift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.thermal-bg {
+  background-size: 200% 200%;
+  animation: thermal-drift 15s ease infinite;
+}
+
+/* ----------------------------------------------------------------
+   26. HOMEPAGE NARRATIVE SECTIONS — pacing and contrast
+   Each section establishes a different density and reading mode.
+   ---------------------------------------------------------------- */
+
+/* Section 1: Hero — expansive, breathing */
+.narrative-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.narrative-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, transparent, var(--color-bg-dark));
+  pointer-events: none;
+}
+
+/* Section 2: Controlled Cold — dense, contained, high contrast border */
+.narrative-conditions {
+  position: relative;
+}
+
+.narrative-conditions::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: var(--space-12);
+  background: linear-gradient(to bottom, var(--color-spectral), transparent);
+  opacity: 0.3;
+}
+
+/* Section 5: Evidence — structured, spatial, authoritative */
+.narrative-evidence {
+  position: relative;
+}
+
+.narrative-evidence .evidence-category {
+  position: relative;
+  padding-left: var(--space-6);
+}
+
+.narrative-evidence .evidence-category::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+}
+
+.narrative-evidence .evidence-category[data-level="supported"]::before {
+  background: var(--color-established);
+}
+
+.narrative-evidence .evidence-category[data-level="interpreted"]::before {
+  background: var(--color-supported);
+}
+
+.narrative-evidence .evidence-category[data-level="untested"]::before {
+  background: var(--color-hypothesis);
+}
+
+/* ----------------------------------------------------------------
+   27. PROGRESSIVE DISCLOSURE — content that reveals depth
+   ---------------------------------------------------------------- */
+.disclosure-expand {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 500ms var(--ease-out),
+              opacity 400ms var(--ease-out),
+              margin 400ms var(--ease-out);
+  margin-top: 0;
+}
+
+.disclosure-expand[data-expanded="true"] {
+  max-height: 60rem;
+  opacity: 1;
+  margin-top: var(--space-6);
+}
+
+.disclosure-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-spectral);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: opacity var(--duration-fast);
+}
+
+.disclosure-trigger::after {
+  content: '↓';
+  display: inline-block;
+  transition: transform var(--duration-normal) var(--ease-out);
+  font-size: 0.75em;
+}
+
+.disclosure-trigger[data-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.disclosure-trigger:hover {
+  opacity: 0.7;
+}
+
+/* ----------------------------------------------------------------
+   28. EVIDENCE SPATIAL STATES — structurally different, not just colors
+   Supported: solid left border, grounded weight
+   Interpreted: dashed left border, lighter density
+   Untested: dotted left border, open/uncertain feel
+   ---------------------------------------------------------------- */
+.evidence-state-supported {
+  border-left: 3px solid var(--color-established);
+  padding-left: var(--space-6);
+  background: rgba(45, 106, 79, 0.03);
+}
+
+.evidence-state-interpreted {
+  border-left: 3px dashed var(--color-supported);
+  padding-left: var(--space-6);
+  background: rgba(69, 123, 157, 0.03);
+}
+
+.evidence-state-untested {
+  border-left: 3px dotted var(--color-hypothesis);
+  padding-left: var(--space-6);
+  background: rgba(123, 94, 167, 0.03);
+}
+
+/* ----------------------------------------------------------------
+   29. FIELD PAGE CHAPTER TRANSITIONS
+   ---------------------------------------------------------------- */
+.chapter-header-enter {
+  animation: chapter-rise 800ms var(--ease-out) both;
+}
+
+@keyframes chapter-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ----------------------------------------------------------------
+   30. HOMEPAGE EVIDENCE GRID — spatial separation
+   ---------------------------------------------------------------- */
+.evidence-grid-spatial {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.evidence-grid-spatial > * {
+  padding: var(--space-6);
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.evidence-grid-spatial > *:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.08);
+}
+
+/* ----------------------------------------------------------------
+   31. PRODUCT REVEAL — category problem → design decision → status
+   ---------------------------------------------------------------- */
+.product-reveal-step {
+  position: relative;
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid rgba(232, 224, 212, 0.08);
+}
+
+.product-reveal-step::before {
+  content: attr(data-step);
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-spectral);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-4);
+  opacity: 0.6;
+}
+
+/* ----------------------------------------------------------------
+   32. SAFETY PROMINENCE — never hidden, never diminished
+   ---------------------------------------------------------------- */
+.safety-prominent {
+  position: relative;
+  background: rgba(251, 191, 36, 0.08);
+  border: 2px solid rgba(251, 191, 36, 0.4);
+  padding: var(--space-6);
+  border-radius: 4px;
+}
+
+.safety-prominent::before {
+  content: '⚠';
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+/* ----------------------------------------------------------------
+   33. REDUCED MOTION FALLBACKS
+   ---------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .signal-pulse {
+    animation: none;
+    opacity: 0.5;
+  }
+
+  .thermal-bg {
+    animation: none;
+  }
+
+  .chapter-header-enter {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .evidence-grid-spatial > *:hover {
+    transform: none;
+  }
 }

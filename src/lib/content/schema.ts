@@ -486,7 +486,7 @@ export const claims: Claim[] = [
   },
   {
     id: 'neuropause-transfer-remains-untested',
-    statement: 'Transfer from Neuropause practice to deliberate state control outside the cold session remains a BHVD research question, not a demonstrated product outcome.',
+    statement: 'Whether attention practiced during Neuropause transfers to deliberate state control outside the cold session has not been demonstrated.',
     statementType: 'bhvd_conceptual_model',
     evidenceConfidence: 'no_direct_evidence',
     sourceIds: [],
@@ -510,13 +510,13 @@ export const productFacts: ProductFact[] = [
   {
     id: 'origin-delivery-format',
     category: 'System',
-    fact: 'Dry cold containment',
+    fact: 'Wearable dry cold',
     source: 'The Ice Sack Origin Edition published specification',
     measurementMethod: 'Manufacturer design record',
     measurementDate: '',
     measuredBy: 'BHVD',
     dateVerified: '',
-    publicWording: 'Dry cold containment',
+    publicWording: 'Wearable dry cold',
     verificationStatus: 'pending',
   },
   {
@@ -534,13 +534,13 @@ export const productFacts: ProductFact[] = [
   {
     id: 'origin-session-format',
     category: 'Protocol',
-    fact: 'Nine-minute guided Entry, Load, and Peak sequence',
+    fact: 'Guided Entry, Load, and Peak attentional phases',
     source: 'Neuropause protocol specification',
     measurementMethod: 'Protocol timing record',
     measurementDate: '',
     measuredBy: 'BHVD',
     dateVerified: '',
-    publicWording: 'Nine minutes. Entry, Load, Peak.',
+    publicWording: 'Entry, Load, Peak attentional phases',
     verificationStatus: 'pending',
   },
   {

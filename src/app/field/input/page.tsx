@@ -3,9 +3,9 @@ import { StatementTypeBadge } from '@/components/StatementTypeBadge';
 import { DeliveryMethodComparison } from '@/components/DeliveryMethodComparison';
 
 export const metadata: Metadata = {
-  title: 'Input — What Controlled Cold Is',
+  title: 'Controlled Cold | Delivery Conditions and Evidence Boundaries',
   description:
-    'Define controlled cold. Differentiate delivery methods. Understand what makes cold exposure a structured sensory input.',
+    'Learn how cold exposure differs by medium, temperature, contact, coverage, duration, and exit, and why results cannot be transferred automatically between methods.',
 };
 
 export default function InputPage() {
@@ -26,31 +26,21 @@ export default function InputPage() {
             Chapter 01
           </span>
           <h1 style={{ marginTop: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
-            Input
+            Controlled cold begins with defined conditions.
           </h1>
           <p className="text-prose">
-            What controlled cold is — and what it is not.
+            Cold exposure is not one uniform intervention. Water immersion, environmental cold,
+            local icing, cryostimulation, and wearable cold systems differ in heat transfer,
+            contact, coverage, duration, and physiological effect.
+          </p>
+          <p className="text-prose" style={{ marginTop: 'var(--space-4)' }}>
+            Controlled cold identifies the delivery method and exposure conditions before
+            interpreting a person&apos;s response.
           </p>
         </header>
 
         {/* Content */}
         <div className="text-prose">
-          <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-            Controlled cold defines the input.
-          </h2>
-
-          <p>
-            Cold exposure means applying a below-normal temperature to the body. Controlled cold
-            defines the delivery method, contact conditions, duration, intended use, and exit.
-            In this framework, those variables create a bounded sensory event that can become
-            the object of deliberate attention.
-          </p>
-
-          <p>
-            The delivery format does not establish a medical, performance, recovery, or therapeutic
-            outcome. It establishes the conditions for a practice of noticing, observing, and choosing.
-          </p>
-
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
             Not all cold is the same.
           </h2>
@@ -58,8 +48,7 @@ export default function InputPage() {
           <p>
             Research on cold exposure uses a variety of delivery methods, each with different
             temperature profiles, surface contact areas, cooling rates, and physiological
-            effects. Borrowing results from one method and applying them to another without
-            qualification is not responsible.
+            effects. Findings should not be transferred between methods without qualification.
           </p>
 
           <div style={{ margin: 'var(--space-8) 0' }}>
@@ -67,20 +56,12 @@ export default function InputPage() {
           </div>
 
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-            Why this matters.
+            Defining an exposure is not establishing an outcome.
           </h2>
 
           <p>
-            The Cold Shift uses cold as a starting point — as the raw sensory input for a
-            practice that is about awareness, not cold itself. But that starting point must
-            be honest about what the cold does and does not do, and about what evidence
-            exists for the specific delivery method used.
-          </p>
-
-          <p>
-            This chapter establishes the rule: every claim about cold on this platform
-            identifies which delivery method the evidence comes from, and whether that
-            evidence applies to dry cold containment.
+            Defining an exposure does not establish that it is safe for a particular person
+            or that it produces a medical, recovery, performance, or psychological benefit.
           </p>
 
           <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
@@ -90,9 +71,8 @@ export default function InputPage() {
               transfer="Untested"
             />
             <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-              The Cold Shift framework — that cold can serve as a structured sensory input
-              for deliberate practice — is a BHVD conceptual model. It has not been validated
-              as a complete framework by independent research.
+              BHVD proposes that a defined cold exposure can serve as an object of deliberate
+              attention. This proposition has not been validated as a complete training framework.
             </p>
           </div>
         </div>

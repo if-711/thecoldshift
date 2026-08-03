@@ -6,7 +6,7 @@ import { useRef, useEffect, useState, useSyncExternalStore } from 'react';
  * State Practice Model stages — the BHVD conceptual framework.
  * NOT a biological sequence, autonomic cycle, or guaranteed outcome.
  */
-const STAGES = ['SIGNAL', 'NOTICE', 'STAY', 'CHOOSE', 'TRANSITION'] as const;
+const STAGES = ['SIGNAL', 'NOTICE', 'ASSESS', 'CHOOSE', 'TRANSITION'] as const;
 
 // Reduced motion media query via useSyncExternalStore (React 19 pattern)
 const reducedMotionQuery =
@@ -31,7 +31,7 @@ function getReducedMotionServerSnapshot() {
  * StateField — Full-screen immersive scroll visualization.
  *
  * Implements:
- * 1. BHVD State Practice Model — Signal → Notice → Stay → Choose → Transition.
+ * 1. BHVD State Practice Model — Signal → Notice → Assess → Choose → Transition.
  * 2. WebGL particle field synchronized to scroll progress.
  * 3. Reduced-motion: static stage cards with manual navigation.
  * 4. WebGL fallback: CSS-only gradient field.
@@ -63,7 +63,7 @@ export function StateField({ progress = 0 }: { progress?: number }) {
 const STAGE_DESCRIPTIONS = [
   'A sensory event becomes noticeable.',
   'Attention identifies what is happening.',
-  'Remain with the experience while respecting safety limits.',
+  'Assess the current state of the experience.',
   'Select whether and how to continue.',
   'The experience continues, changes, or ends.',
 ] as const;
@@ -72,7 +72,7 @@ const STAGE_DESCRIPTIONS = [
 const STAGE_COLORS = [
   { r: 0.65, g: 0.75, b: 0.85 },  // SIGNAL — cool steel
   { r: 0.45, g: 0.60, b: 0.82 },  // NOTICE — deeper blue
-  { r: 0.35, g: 0.55, b: 0.78 },  // STAY — settled indigo
+  { r: 0.35, g: 0.55, b: 0.78 },  // ASSESS — settled indigo
   { r: 0.30, g: 0.50, b: 0.75 },  // CHOOSE — focused
   { r: 0.55, g: 0.70, b: 0.80 },  // TRANSITION — clarity
 ] as const;

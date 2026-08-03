@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { StatementTypeBadge } from '@/components/StatementTypeBadge';
 
 export const metadata: Metadata = {
-  title: 'Practice — The Neuropause Protocol',
-  description: 'Neuropause is a nine-minute practice with three phases: Entry, Load, and Peak.',
+  title: 'Neuropause | A BHVD Practice Format',
+  description:
+    'Neuropause is BHVD\u2019s unvalidated attentional format for use with controlled cold. Learn what the structure proposes and what has not been demonstrated.',
 };
 
 export default function PracticePage() {
@@ -12,20 +13,16 @@ export default function PracticePage() {
       <div className="container" style={{ maxWidth: 'var(--max-width-prose)' }}>
         <header style={{ marginBottom: 'var(--space-16)' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--color-text-tertiary)' }}>Chapter 05</span>
-          <h1 style={{ marginTop: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>Practice</h1>
-          <p className="text-prose">A nine-minute structured cold session.</p>
+          <h1 style={{ marginTop: 'var(--space-3)', marginBottom: 'var(--space-6)' }}>
+            A structure for attention, not a proven outcome.
+          </h1>
+          <p className="text-prose">
+            Neuropause is a practice format developed by BHVD for use during a controlled
+            cold session. It organizes attention into three named phases.
+          </p>
         </header>
 
         <div className="text-prose">
-          <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-            The Neuropause Protocol.
-          </h2>
-          <p>
-            Neuropause is a nine-minute practice developed by BHVD. It structures a cold
-            session into three phases — Entry, Load, and Peak — with the goal of practicing
-            deliberate attention during a bounded sensory event.
-          </p>
-
           <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
             <StatementTypeBadge
               type="bhvd_conceptual_model"
@@ -33,85 +30,72 @@ export default function PracticePage() {
               transfer="Untested"
             />
             <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-              The Neuropause Protocol is a BHVD practice structure.
-              Its format, timing, and phase progression have not been independently validated.
+              The format, timing, phase names, safety parameters, and proposed transfer
+              beyond the session have not been independently validated.
             </p>
           </div>
 
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-            Three phases. Nine minutes.
+            Three narrative attention phases.
           </h2>
+
+          <p>
+            Neuropause organizes a controlled cold session into three named phases.
+            These are narrative attention phases, not physiological phases.
+          </p>
 
           <div style={{ margin: 'var(--space-8) 0' }}>
             <table className="claim-ledger">
               <thead>
                 <tr>
                   <th>Phase</th>
-                  <th>Time</th>
                   <th>Focus</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td style={{ fontWeight: 500 }}>Entry</td>
-                  <td>0–3 min</td>
                   <td>
-                    Cold contact begins. Notice the thermal signal, your breathing,
-                    and the first impulse to react. The task is to observe what is
-                    happening while remaining within the product safety limits.
+                    Notice the initial thermal signal and the first impulse to react.
+                    Observe what is happening.
                   </td>
                 </tr>
                 <tr>
                   <td style={{ fontWeight: 500 }}>Load</td>
-                  <td>3–6 min</td>
                   <td>
                     The sensation continues. Settle into an unforced breathing rhythm.
-                    If comfortable, inhale for four seconds and exhale for six to eight
-                    seconds. No breath holding. No forcing.
+                    Continue to observe.
                   </td>
                 </tr>
                 <tr>
                   <td style={{ fontWeight: 500 }}>Peak</td>
-                  <td>6–9 min</td>
                   <td>
                     Attention becomes the practice. Notice what has changed and what
-                    has not. Choose deliberately whether to continue. Complete the
-                    session at nine minutes or stop sooner if a safety threshold is
-                    reached.
+                    has not. Choose deliberately whether to continue or stop.
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p style={{ fontFamily: 'var(--font-editorial)', fontSize: 'var(--text-lg)', fontWeight: 500, marginTop: 'var(--space-8)' }}>
-            Entry. Load. Peak. One contained session.
-          </p>
-
           <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-4)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)', lineHeight: 'var(--leading-relaxed)' }}>
             <p>
-              The phase timings organize the Neuropause practice. They do not represent
-              measured physiological transitions.
+              The phase names organize the Neuropause practice. They do not represent
+              measured physiological transitions. Peak refers to the final attentional
+              phase, not a measured physiological peak.
             </p>
             <p style={{ marginTop: 'var(--space-2)' }}>
-              Peak refers to the final attentional phase of the practice. It is not a
-              measured physiological peak.
+              Final product instructions for use govern session duration, stop conditions,
+              and safety parameters.
             </p>
           </div>
 
           <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
-            What practice does and does not promise.
+            What the practice does and does not claim.
           </h2>
           <p>
-            Repeated practice with a structured sensory input may improve a person&apos;s
-            ability to notice body signals and observe their own reactions during that
-            specific type of session. Whether these observations transfer to other areas
-            of life is not established.
-          </p>
-          <p>
-            The Cold Shift does not claim that nine minutes of cold practice will change
-            your life. It provides a structure for practicing a specific kind of attention
-            under specific conditions.
+            The intended activity is to notice bodily signals and reactions during the session.
+            Whether practice changes this ability has not been established.
           </p>
 
           <div style={{ margin: 'var(--space-8) 0', padding: 'var(--space-6)', background: 'var(--color-bg-deep)', border: '1px solid var(--color-border)' }}>
@@ -121,9 +105,9 @@ export default function PracticePage() {
               transfer="Untested"
             />
             <p style={{ marginTop: 'var(--space-3)', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>
-              The claim that structured cold practice improves attention or
-              self-regulation in contexts beyond the cold session itself remains a BHVD
-              conceptual model. Transfer from cold practice to daily life is untested.
+              Neuropause does not claim to regulate the nervous system, treat a condition,
+              improve mental health, accelerate recovery, or improve performance. It has not
+              been shown to improve attention or self-regulation outside the session.
             </p>
           </div>
         </div>

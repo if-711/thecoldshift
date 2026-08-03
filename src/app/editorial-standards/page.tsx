@@ -30,8 +30,8 @@ export default function EditorialStandardsPage() {
               <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>Delivery method integrity</h2>
               <p>
                 Results from cold water immersion, whole-body cryotherapy, local icing, or
-                environmental cold exposure are not presented as evidence for dry cold
-                containment without explicit qualification. Each delivery method has a
+                environmental cold exposure are not presented as evidence for wearable dry cold
+                without explicit qualification. Each delivery method has a
                 different mechanism, and evidence does not transfer automatically.
               </p>
 
