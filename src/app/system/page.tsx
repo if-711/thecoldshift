@@ -31,7 +31,7 @@ const systemSequence = [
   {
     number: '02',
     title: 'Wear',
-    body: 'The outer shell places dry cold across a broad area without water, filling, or drainage.',
+    body: 'The inner shell places dry cold across a broad area without water, filling, or drainage.',
   },
   {
     number: '03',
