@@ -15,7 +15,10 @@ export function ChapterNav() {
           : ch.slug === 'system'
             ? '/system/'
             : `/field/${ch.slug}/`;
-        const isCurrent = pathname === href || pathname === href.slice(0, -1);
+        const isCurrent = pathname === href
+          || pathname === href.slice(0, -1)
+          || (ch.slug === 'evidence' && pathname.startsWith('/evidence'))
+          || (ch.slug === 'system' && pathname.startsWith('/system'));
 
         return (
           <Link

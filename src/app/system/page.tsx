@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { ChapterNav } from '@/components/ChapterNav';
 import { ChapterFlow } from '@/components/ChapterFlow';
 
 export const metadata: Metadata = {
@@ -57,7 +58,11 @@ export default function SystemPage() {
   return (
     <>
       <Header />
-      <main id="main-content" style={{ paddingTop: '3.5rem' }}>
+      <div style={{ paddingTop: '3.5rem' }}>
+        <div className="container" style={{ paddingTop: 'var(--space-4)', paddingBottom: 'var(--space-2)' }}>
+          <ChapterNav />
+        </div>
+      <main id="main-content">
         <article>
           <header
             className="section section-dark"
@@ -566,6 +571,7 @@ export default function SystemPage() {
           </div>
         </article>
       </main>
+      </div>
       <Footer />
     </>
   );

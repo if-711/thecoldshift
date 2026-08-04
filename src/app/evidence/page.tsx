@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { ChapterNav } from '@/components/ChapterNav';
 import { ChapterFlow } from '@/components/ChapterFlow';
 import { EvidenceLibraryInteractive } from '@/components/EvidenceLibraryInteractive';
 import {
@@ -25,7 +26,11 @@ export default function EvidencePage() {
   return (
     <>
       <Header />
-      <main id="main-content" style={{ paddingTop: '3.5rem' }}>
+      <div style={{ paddingTop: '3.5rem' }}>
+        <div className="container" style={{ paddingTop: 'var(--space-4)', paddingBottom: 'var(--space-2)' }}>
+          <ChapterNav />
+        </div>
+      <main id="main-content">
         <article className="section">
           <div className="container">
             <header style={{ marginBottom: 'var(--space-16)', maxWidth: 'var(--max-width-prose)' }}>
@@ -361,6 +366,7 @@ export default function EvidencePage() {
           <ChapterFlow currentChapterId="evidence" />
         </article>
       </main>
+      </div>
       <Footer />
     </>
   );

@@ -47,15 +47,7 @@ const METHODS: DeliveryMethod[] = [
     coverage: 'Localized',
     note: 'Temperatures, durations, and physiological outcomes require source records before final publication.',
   },
-  {
-    id: 'pcm',
-    name: 'Generic PCM Contact',
-    mechanism: 'Phase change material conduction',
-    medium: 'Encapsulated PCM',
-    contact: 'Dry surface contact',
-    coverage: 'Varies by design',
-    note: 'Temperatures, durations, and physiological outcomes require source records before final publication.',
-  },
+
   {
     id: 'env',
     name: 'Environmental Cold',
