@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { ChapterFlow } from '@/components/ChapterFlow';
+import { PhysiologyResponseGrid } from '@/components/PhysiologyResponseGrid';
 
 export const metadata: Metadata = {
-  title: 'Signal | How the Body Detects Cold',
+  title: 'Signal | How the Body Detects and Responds to Cold',
   description:
-    'How temperature-sensitive sensory pathways detect cold at the skin and transmit information toward the central nervous system.',
+    'How temperature-sensitive sensory pathways detect cold at the skin, transmit information toward the central nervous system, and trigger measurable physiological responses.',
 };
 
 export default function SignalPage() {
@@ -56,6 +57,27 @@ export default function SignalPage() {
             meaning arise from additional physiological and cognitive processing.
           </p>
 
+          <h2 style={{ fontSize: 'var(--text-2xl)', marginBottom: 'var(--space-6)', marginTop: 'var(--space-16)' }}>
+            Documented physiological responses to cold exposure.
+          </h2>
+
+          <p>
+            Cold exposure triggers measurable physiological changes across multiple systems.
+            Each response below has been documented in controlled research. The magnitude
+            and presence of these responses depend on temperature, duration, delivery method,
+            and individual factors.
+          </p>
+        </div>
+
+        <PhysiologyResponseGrid />
+
+        <div className="text-prose">
+          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-tertiary)', lineHeight: 'var(--leading-relaxed)', marginTop: 'var(--space-4)', marginBottom: 'var(--space-16)' }}>
+            Responses documented in controlled research using various cold exposure methods.
+            Individual outcomes vary by method, duration, temperature, and person.
+            These findings should not be interpreted as guaranteed outcomes of any specific product.
+          </p>
+
           <p>
             The next chapter, Notice, examines how people perceive and interpret these
             internal body signals. The signal itself is physiology. Its interpretation is
@@ -68,3 +90,4 @@ export default function SignalPage() {
     </article>
   );
 }
+
