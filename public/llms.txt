@@ -1,0 +1,27 @@
+# The Cold Shift
+
+> A Field Guide to Controlled Cold
+
+## About
+The Cold Shift is an evidence-based field guide to controlled cold exposure. It covers how cold is delivered to the body, how the body detects and responds to it, what the published research supports, and what remains untested. No sponsors. No ads. No affiliate links.
+
+## Content Sections
+- Field: Delivery methods, protocols, and practical implementation of cold exposure
+- System: The nervous system's detection and response pathways for cold
+- Evidence: Published research, clinical trials, and systematic reviews on cold exposure
+- Safety: Risk factors, contraindications, and harm reduction protocols
+
+## Key Topics
+cold exposure, cold water immersion, ice bath, cold plunge, cryotherapy, cold shock response, brown adipose tissue, norepinephrine, dopamine, vagal tone, cold thermogenesis, Wim Hof, deliberate cold exposure, recovery, inflammation, nervous system training, sympathetic activation, parasympathetic recovery
+
+## URL Structure
+- Homepage: https://thecoldshift.com
+- Field Guide: https://thecoldshift.com/field/
+- System: https://thecoldshift.com/system/
+- Evidence: https://thecoldshift.com/evidence/
+- Safety: https://thecoldshift.com/safety/
+- About: https://thecoldshift.com/about/
+- Editorial Standards: https://thecoldshift.com/editorial-standards/
+
+## Contact
+contact@thecoldshift.com
