@@ -635,7 +635,7 @@ export default function HomePage() {
                   justifyContent: 'center',
                 }}
               >
-                Explore Methods
+                Read the Field Guide
               </Link>
               <Link
                 href="/evidence/"
