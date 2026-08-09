@@ -1,0 +1,56 @@
+# The Cold Shift
+
+> A Category Guide to Controlled Cold — by BHVD
+
+## About
+The Cold Shift is an educational guide to controlled cold exposure. Controlled cold is cold exposure defined by method, conditions, duration, and exit criteria. The site covers how cold is delivered to the body, how the body detects and responds to it, what published research supports, and what remains untested. No sponsors. No ads. No affiliate links.
+
+Published by BHVD Inc.
+
+## Content Architecture
+
+### Field Guide (Practice Framework)
+- /field/signal/ — How cold activates thermoreceptors (TRPM8, TRPA1) and initiates the sensory signal
+- /field/notice/ — The moment of conscious awareness of the cold signal
+- /field/input/ — Delivery methods: Water Immersion, Cryotherapy Chamber, The Ice Sack
+- /field/practice/ — Neuropause: an attention framework for use during a controlled cold session
+- /field/choice/ — The decision point: continue, modify, or exit the session
+
+### System (Neuroscience)
+- /system/ — How the nervous system detects, transmits, and responds to cold. Covers TRPM8 activation, afferent signaling, sympathetic response, and norepinephrine release.
+
+### Evidence Library
+- /evidence/ — Published research organized by claim, with sourcing and limitations
+- /evidence/claims/ — Individual claim assessments with evidence status (supported, partially supported, unsupported, untested)
+- /evidence/sources/ — Source material with DOI links and study methodology notes
+
+### Safety
+- /safety/ — Risk factors, contraindications, harm reduction, and exit criteria
+
+## Key Concepts
+- Controlled Cold: Cold exposure defined by method, conditions, duration, and exit criteria
+- Neuropause: An attention framework (not a treatment) for observing the interval between sensory signal and decision during a cold session
+- BHVD Practice Model: Signal → Notice → Assess → Choose → Transition
+- The Ice Sack: BHVD's wearable dry cold system (15.3 × 10.6 × 5.5 inches)
+
+## Key Topics
+cold exposure, cold water immersion, ice bath, cold plunge, cryotherapy, cold shock response, brown adipose tissue, norepinephrine, dopamine, TRPM8, thermoreceptors, controlled cold, deliberate cold exposure, cold thermogenesis, nervous system, sympathetic activation, parasympathetic recovery, interoception
+
+## Delivery Methods Covered
+1. Water Immersion — full-body submersion in cold water (most studied)
+2. Cryotherapy Chamber — whole-body air-based cold (−110°C to −140°C)
+3. The Ice Sack — wearable dry cold system by BHVD
+
+## What This Site Is NOT
+- Not medical advice or a clinical recommendation
+- Not a product comparison or affiliate site
+- Not a training program or protocol prescription
+- Neuropause is not a validated clinical intervention
+
+## Publisher
+BHVD Inc.
+Website: https://thecoldshift.com
+Contact: contact@thecoldshift.com
+
+## Sitemap
+https://thecoldshift.com/sitemap.xml

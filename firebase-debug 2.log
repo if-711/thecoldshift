@@ -1,0 +1,122 @@
+[debug] [2026-08-02T04:56:28.173Z] ----------------------------------------------------------------------
+[debug] [2026-08-02T04:56:28.175Z] Command:       /Users/if/Library/pnpm/nodejs/22.11.0/bin/node /Users/if/.npm/_npx/ba4f1959e38407b5/node_modules/.bin/firebase deploy --only hosting
+[debug] [2026-08-02T04:56:28.175Z] CLI Version:   15.25.1
+[debug] [2026-08-02T04:56:28.175Z] Platform:      darwin
+[debug] [2026-08-02T04:56:28.175Z] Node Version:  v22.11.0
+[debug] [2026-08-02T04:56:28.175Z] Detected Agent: antigravity
+[debug] [2026-08-02T04:56:28.175Z] Time:          Sat Aug 01 2026 23:56:28 GMT-0500 (Central Daylight Time)
+[debug] [2026-08-02T04:56:28.175Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-08-02T04:56:28.844Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-02T04:56:28.844Z] > authorizing via signed-in user (norman@trynorm.co)
+[debug] [2026-08-02T04:56:28.844Z] [iam] checking project avian-catwalk-495622-a6 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-08-02T04:56:28.849Z] Checked if tokens are valid: false, expires at: 1785647356752
+[debug] [2026-08-02T04:56:28.849Z] Checked if tokens are valid: false, expires at: 1785647356752
+[debug] [2026-08-02T04:56:28.850Z] > refreshing access token with scopes: []
+[debug] [2026-08-02T04:56:28.850Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-08-02T04:56:28.850Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-08-02T04:56:28.995Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-08-02T04:56:28.995Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-08-02T04:56:29.006Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/avian-catwalk-495622-a6:testIamPermissions [none]
+[debug] [2026-08-02T04:56:29.006Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/avian-catwalk-495622-a6:testIamPermissions  x-goog-user-project=avian-catwalk-495622-a6
+[debug] [2026-08-02T04:56:29.006Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/avian-catwalk-495622-a6:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-08-02T04:56:29.133Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/avian-catwalk-495622-a6:testIamPermissions 200
+[debug] [2026-08-02T04:56:29.133Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/avian-catwalk-495622-a6:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-08-02T04:56:29.133Z] Checked if tokens are valid: true, expires at: 1785650187995
+[debug] [2026-08-02T04:56:29.133Z] Checked if tokens are valid: true, expires at: 1785650187995
+[debug] [2026-08-02T04:56:29.133Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/avian-catwalk-495622-a6 [none]
+[debug] [2026-08-02T04:56:29.438Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/avian-catwalk-495622-a6 200
+[debug] [2026-08-02T04:56:29.438Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/avian-catwalk-495622-a6 {"projectId":"avian-catwalk-495622-a6","projectNumber":"336312946722","displayName":"My First Project","name":"projects/avian-catwalk-495622-a6","resources":{"hostingSite":"avian-catwalk-495622-a6"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_dab30026-effd-4bfd-9058-59febc09402c"}
+[info] 
+[info] === Deploying to 'avian-catwalk-495622-a6'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-08-02T04:56:29.440Z] Checked if tokens are valid: true, expires at: 1785650187995
+[debug] [2026-08-02T04:56:29.440Z] Checked if tokens are valid: true, expires at: 1785650187995
+[debug] [2026-08-02T04:56:29.440Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/avian-catwalk-495622-a6/sites/avian-catwalk-495622-a6 [none]
+[debug] [2026-08-02T04:56:30.055Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/avian-catwalk-495622-a6/sites/avian-catwalk-495622-a6 200
+[debug] [2026-08-02T04:56:30.055Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/avian-catwalk-495622-a6/sites/avian-catwalk-495622-a6 {"name":"projects/avian-catwalk-495622-a6/sites/avian-catwalk-495622-a6","defaultUrl":"https://avian-catwalk-495622-a6.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-08-02T04:56:30.056Z] Checked if tokens are valid: true, expires at: 1785650187995
+[debug] [2026-08-02T04:56:30.056Z] Checked if tokens are valid: true, expires at: 1785650187995
+[debug] [2026-08-02T04:56:30.056Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/avian-catwalk-495622-a6/versions [none]
+[debug] [2026-08-02T04:56:30.056Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/avian-catwalk-495622-a6/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-08-02T04:56:31.094Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/avian-catwalk-495622-a6/versions 200
+[debug] [2026-08-02T04:56:31.094Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/avian-catwalk-495622-a6/versions {"name":"projects/336312946722/sites/avian-catwalk-495622-a6/versions/c8339ecf1624b021","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[avian-catwalk-495622-a6]: beginning deploy... 
+[info] i  hosting[avian-catwalk-495622-a6]: found 387 files in out 
+[debug] [2026-08-02T04:56:31.119Z] [hosting] uploading with 200 concurrency
+[debug] [2026-08-02T04:56:31.119Z] [hosting] hash cache [b3V0] not populated
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [0/387] (0%) 
+[info] i  hosting: hashing files [47/387] (12%) 
+[info] i  hosting: hashing files [47/387] (12%) 
+[info] i  hosting: hashing files [47/387] (12%) 
+[info] i  hosting: hashing files [47/387] (12%) 
+[info] i  hosting: hashing files [47/387] (12%) 
+[info] i  hosting: hashing files [47/387] (12%) 
+[info] i  hosting: hashing files [47/387] (12%) 
+[info] i  hosting: hashing files [47/387] (12%) 
+[info] i  hosting: hashing files [47/387] (12%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [94/387] (24%) 
+[info] i  hosting: hashing files [142/387] (36%) 
+[info] i  hosting: hashing files [142/387] (36%) 
+[info] i  hosting: hashing files [142/387] (36%) 
+[info] i  hosting: hashing files [142/387] (36%) 
+[info] i  hosting: hashing files [142/387] (36%) 
+[info] i  hosting: hashing files [142/387] (36%) 
+[info] i  hosting: hashing files [142/387] (36%) 
+[info] i  hosting: hashing files [189/387] (48%) 
+[info] i  hosting: hashing files [189/387] (48%) 
+[info] i  hosting: hashing files [189/387] (48%) 
+[info] i  hosting: hashing files [189/387] (48%) 
+[info] i  hosting: hashing files [189/387] (48%) 
+[info] i  hosting: hashing files [189/387] (48%) 
+[info] i  hosting: hashing files [189/387] (48%) 
+[info] i  hosting: hashing files [189/387] (48%) 
+[info] i  hosting: hashing files [236/387] (60%) 
+[info] i  hosting: hashing files [236/387] (60%) 
+[info] i  hosting: hashing files [236/387] (60%) 
+[info] i  hosting: hashing files [236/387] (60%) 
+[info] i  hosting: hashing files [236/387] (60%) 
+[info] i  hosting: hashing files [236/387] (60%) 
+[info] i  hosting: hashing files [236/387] (60%) 
+[info] i  hosting: hashing files [283/387] (73%) 
+[info] i  hosting: hashing files [283/387] (73%) 
+[info] i  hosting: hashing files [283/387] (73%) 
+[info] i  hosting: hashing files [283/387] (73%) 
+[info] i  hosting: hashing files [283/387] (73%) 
+[info] i  hosting: hashing files [283/387] (73%) 
+[info] i  hosting: hashing files [283/387] (73%) 
