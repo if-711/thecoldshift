@@ -154,10 +154,10 @@ export default function HomePage() {
                   Understand Controlled Cold
                 </Link>
                 <Link
-                  href="/evidence/"
+                  href="/field/input/"
                   className="btn-secondary"
                 >
-                  Explore the Evidence
+                  Read the Field Guide
                 </Link>
               </div>
             </div>
