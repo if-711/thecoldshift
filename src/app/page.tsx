@@ -276,44 +276,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ============================================================
-            SECTION 4 — CATEGORY PRINCIPLES (compact)
-            ============================================================ */}
-        <section className="section" style={{
-          background: 'var(--color-surface)',
-        }}>
-          <div className="container" style={{ maxWidth: 'var(--max-width-prose)' }}>
-            <ScrollReveal motion="rise">
-              <p
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: 'var(--text-xs)',
-                  letterSpacing: '0.15em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-text-tertiary)',
-                  marginBottom: 'var(--space-4)',
-                }}
-              >
-                Principles
-              </p>
-              <h2 style={{ marginBottom: 'var(--space-6)' }}>
-                What defines the category.
-              </h2>
-              <p style={{
-                fontSize: 'var(--text-base)',
-                color: 'var(--color-text-secondary)',
-                lineHeight: 'var(--leading-relaxed)',
-              }}>
-                Controlled cold is defined by conditions that are controlled, repeatable,
-                and measurable. It is accessible without extreme intensity. Products and
-                publishers are transparent about what is verified and what is untested.
-                Safety takes precedence over completing a session.
-              </p>
-            </ScrollReveal>
-          </div>
-        </section>
 
-        <SectionDivider variant="boundary" />
 
         {/* ============================================================
             SECTION 5 — BHVD PRACTICE MODEL
@@ -355,42 +318,19 @@ export default function HomePage() {
                 maxWidth: '36rem',
                 margin: '0 auto var(--space-4)',
               }}>
-                BHVD proposes a model for observing the interval between receiving
-                a sensory signal and deciding what to do next. It is a conceptual
-                practice framework, not a biological measurement or validated
-                behavioral treatment.
+                BHVD proposes a practice model for observing the interval between
+                a sensory signal and deciding what to do next — a conceptual
+                framework, not a biological measurement or treatment.
               </p>
               <p style={{
                 fontSize: 'var(--text-sm)',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 'var(--leading-relaxed)',
                 maxWidth: '36rem',
-                margin: '0 auto var(--space-4)',
-              }}>
-                Expectations, prior experience, instructions, and context may influence
-                how a cold signal is noticed and interpreted. This model begins with the
-                physical input because it describes the sequence of a controlled cold
-                session, not a complete theory of perception.
-              </p>
-              <p style={{
-                fontSize: 'var(--text-sm)',
-                color: 'var(--color-text-secondary)',
-                lineHeight: 'var(--leading-relaxed)',
-                maxWidth: '36rem',
-                margin: '0 auto var(--space-3)',
+                margin: '0 auto var(--space-5)',
+                fontWeight: 500,
               }}>
                 Signal. Notice. Assess. Choose. Transition.
-              </p>
-              <p style={{
-                fontSize: 'var(--text-sm)',
-                color: 'var(--color-text-secondary)',
-                lineHeight: 'var(--leading-relaxed)',
-                maxWidth: '36rem',
-                margin: '0 auto var(--space-4)',
-              }}>
-                A reported experience may influence expectations during a later session.
-                Whether repeated practice changes perception, decision making, or behavior
-                outside the session remains untested.
               </p>
               <p style={{
                 fontSize: 'var(--text-xs)',
@@ -400,8 +340,8 @@ export default function HomePage() {
                 margin: '0 auto var(--space-4)',
                 fontStyle: 'italic',
               }}>
-                This is not the definition of controlled cold. Direct evidence does not
-                currently establish transfer beyond the cold session.
+                This is a practice framework, not the definition of controlled cold.
+                Whether effects transfer beyond the session remains untested.
               </p>
               <Link
                 href="/field/signal/"
@@ -561,7 +501,7 @@ export default function HomePage() {
           </div>
         </section>
 
-
+        <SectionDivider variant="thermal" />
 
         {/* ============================================================
             SECTION 9 — ONE IMPLEMENTATION OF CONTROLLED COLD
