@@ -347,7 +347,7 @@ export const sources: Source[] = [
   },
   {
     id: 'lubkowska-cryostimulation-cytokines-2010',
-    pmid: '20526414',
+    pmid: '19779735',
     title: 'Whole-body cryostimulation — potential beneficial treatment for improving antioxidant capacity in healthy men',
     authors: ['Anna Lubkowska', 'Zbigniew Szygula', 'Dorota Chlubek', 'Grzegorz Banfi'],
     journal: 'BMC Sports Science, Medicine and Rehabilitation',
@@ -360,7 +360,7 @@ export const sources: Source[] = [
     outcomeMeasured: 'Pro- and anti-inflammatory cytokines, antioxidant markers',
     limitations: 'Whole-body cryostimulation at –130 °C is not comparable to dry cold containment. The extreme temperature and brief duration produce different exposure conditions.',
     doi: '10.1186/1758-2555-2-12',
-    url: 'https://pubmed.ncbi.nlm.nih.gov/20526414/',
+    url: 'https://pubmed.ncbi.nlm.nih.gov/19779735/',
   },
 ];
 
