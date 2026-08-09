@@ -318,9 +318,9 @@ export default function HomePage() {
                 maxWidth: '36rem',
                 margin: '0 auto var(--space-4)',
               }}>
-                BHVD proposes a practice model for observing the interval between
-                a sensory signal and deciding what to do next — a conceptual
-                framework, not a biological measurement or treatment.
+                Every cold session contains a moment between sensation and
+                response — a gap where you notice, assess, and decide.
+                BHVD&rsquo;s practice model maps that interval.
               </p>
               <p style={{
                 fontSize: 'var(--text-sm)',
@@ -340,8 +340,7 @@ export default function HomePage() {
                 margin: '0 auto var(--space-4)',
                 fontStyle: 'italic',
               }}>
-                This is a practice framework, not the definition of controlled cold.
-                Whether effects transfer beyond the session remains untested.
+                A framework for observing what cold reveals about your default responses.
               </p>
               <Link
                 href="/field/signal/"
