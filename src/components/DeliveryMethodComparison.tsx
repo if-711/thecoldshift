@@ -33,7 +33,7 @@ const METHODS: DeliveryMethod[] = [
     preparation: 'Fill container, chill water, measure temperature',
     temperatureProfile: 'Typically 10–15 °C in research protocols',
     controllability: 'In home settings, temperature drifts as ice melts and wetness changes skin conductance. Lab protocols can maintain stable temperatures with chillers. Consumer use requires infrastructure, drainage, and temperature monitoring.',
-    note: 'Most researched method. The majority of published evidence on cold exposure physiology comes from water immersion. However, water introduces variables — conductance changes with skin wetness, temperature drifts during the session, and setup requires plumbing or manual ice management.',
+    note: 'Much of the research summarised on this site uses water immersion. Water introduces variables — conductance changes with skin wetness, temperature drifts during the session, and setup requires plumbing or manual ice management.',
   },
   {
     id: 'wbc',
@@ -44,7 +44,7 @@ const METHODS: DeliveryMethod[] = [
     coverage: 'Whole body',
     preparation: 'Facility operated; no user preparation',
     temperatureProfile: '−110 °C to −160 °C for 2–3 minutes',
-    controllability: 'Duration capped at 2–3 minutes by safety limits. Facility-dependent — no home use. Facilities control the exposure environment, but user control over session length is limited.',
+    controllability: 'Typically delivered in brief, facility-operated sessions. Facilities control the exposure environment, but user control over session length is limited.',
     note: 'Very low temperature, very short duration. Gas transfers heat less efficiently than liquid or solid contact. Sessions are brief relative to other methods, and the method requires a facility visit.',
   },
   {
@@ -56,7 +56,7 @@ const METHODS: DeliveryMethod[] = [
     coverage: 'Full-body containment by design',
     preparation: 'Freeze fully for five hours',
     temperatureProfile: 'Product specific — requires direct testing data',
-    controllability: 'No water and no wetness variable. User controls session duration and exit. Portable — no facility or plumbing. Fit, ambient temperature, initial PCM state, clothing, and body geometry can still vary.',
+    controllability: 'No immersion water to fill or drain. User controls session duration and exit. Portable — no facility or plumbing. Fit, ambient temperature, initial PCM state, clothing, and body geometry can still vary.',
     note: 'A dry cold system by BHVD. No water to fill, drain, or monitor. The frozen phase-change shell provides broad surface contact. It reduces several sources of variation present in water immersion but does not eliminate all variability. Product-specific thermal performance requires direct testing.',
   },
 ];

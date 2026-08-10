@@ -271,7 +271,7 @@ export default function HomePage() {
                 lineHeight: 'var(--leading-relaxed)',
                 marginBottom: 'var(--space-6)',
               }}>
-                Dry cold containment is designed to offer a fixed-duration,
+                Dry cold containment is designed to offer a defined-duration,
                 body-worn alternative that reduces several of these sources of
                 variation. Fit, ambient conditions, and initial PCM state can
                 still vary. Whether dry cold produces equivalent or distinct
