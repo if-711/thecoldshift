@@ -18,6 +18,7 @@ interface DeliveryMethod {
   coverage: string;
   preparation: string;
   temperatureProfile: string;
+  controllability: string;
   note: string;
 }
 
@@ -31,18 +32,20 @@ const METHODS: DeliveryMethod[] = [
     coverage: 'Full body or partial',
     preparation: 'Fill container, chill water, measure temperature',
     temperatureProfile: 'Typically 10–15 °C in research protocols',
-    note: 'Most researched cold exposure method. The majority of published evidence on cold exposure physiology comes from water immersion protocols.',
+    controllability: 'Temperature drifts as ice melts. Wetness changes skin conductance. Requires infrastructure, drainage, and temperature monitoring.',
+    note: 'Most researched method. The majority of published evidence on cold exposure physiology comes from water immersion. However, water introduces variables — conductance changes with skin wetness, temperature drifts during the session, and setup requires plumbing or manual ice management.',
   },
   {
     id: 'wbc',
     name: 'Cryotherapy Chamber',
     mechanism: 'Gas convection',
     medium: 'Cooled air or nitrogen vapor',
-    contact: 'Indirect through gas',
+    contact: 'Indirect — gas, not surface contact',
     coverage: 'Whole body',
     preparation: 'Facility operated; no user preparation',
     temperatureProfile: '−110 °C to −160 °C for 2–3 minutes',
-    note: 'Facility based. Very low air temperature, very short duration. A different heat transfer mechanism than water or dry contact methods.',
+    controllability: 'Duration capped at 2–3 minutes by safety limits. Facility-dependent — no home use. Gas convection transfers heat differently than conduction.',
+    note: 'Very low temperature, very short duration. The extreme air temperature sounds dramatic, but gas transfers heat far less efficiently than liquid or solid contact. Sessions are too brief for sustained attentional practice, and the method requires a facility visit.',
   },
   {
     id: 'ice-sack',
@@ -53,7 +56,8 @@ const METHODS: DeliveryMethod[] = [
     coverage: 'Full-body containment by design',
     preparation: 'Freeze fully for five hours',
     temperatureProfile: 'Product specific — requires direct testing data',
-    note: 'A dry cold system by BHVD. No water, filling, or drainage. Broad surface contact through a frozen phase-change shell. Direct thermal profile and product-specific outcomes require testing with the production system.',
+    controllability: 'No water, no wetness variable. Stable solid-contact temperature. User controls session duration and exit. Portable — no facility or plumbing.',
+    note: 'A dry cold system by BHVD. No water to fill, drain, or monitor. The frozen phase-change shell delivers consistent surface contact without the conductance variables of wetness or the time ceiling of cryotherapy. The user sets duration and exit conditions — the definition of controlled cold.',
   },
 ];
 
@@ -114,6 +118,10 @@ export function DeliveryMethodComparison() {
           <div>
             <dt>Temperature profile</dt>
             <dd>{activeMethod.temperatureProfile}</dd>
+          </div>
+          <div>
+            <dt>Controllability</dt>
+            <dd>{activeMethod.controllability}</dd>
           </div>
         </dl>
         <p style={{ fontSize: 'var(--text-sm)', color: 'var(--color-text-tertiary)', lineHeight: 'var(--leading-relaxed)', marginTop: 'var(--space-4)', fontStyle: 'italic' }}>
