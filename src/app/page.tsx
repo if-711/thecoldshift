@@ -257,8 +257,22 @@ export default function HomePage() {
                 lineHeight: 'var(--leading-relaxed)',
                 marginBottom: 'var(--space-6)',
               }}>
-                The category includes water immersion, cryostimulation,
-                and other designed temperature experiences.
+                Water immersion introduces variables the user cannot
+                control — temperature drifts as ice melts, wetness changes skin
+                conductance, and setup demands infrastructure. Cryotherapy caps
+                sessions at two to three minutes inside a facility. Neither
+                method lets the user define every condition.
+              </p>
+              <p style={{
+                fontSize: 'var(--text-base)',
+                color: 'rgba(232, 224, 212, 0.6)',
+                lineHeight: 'var(--leading-relaxed)',
+                marginBottom: 'var(--space-6)',
+              }}>
+                Dry cold — solid conduction without water, wetness, or
+                time constraints — is the only full-body method where the user
+                sets the delivery, duration, and exit. That is what makes
+                controlled cold viable.
               </p>
               <p style={{
                 fontSize: 'var(--text-sm)',
