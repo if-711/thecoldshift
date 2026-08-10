@@ -8,10 +8,10 @@
  */
 
 const SHIFTS: { conventional: string; emerging: string }[] = [
-  { conventional: 'Extreme cold', emerging: 'Controlled cold' },
-  { conventional: 'Endurance test', emerging: 'Designed exposure' },
-  { conventional: 'One dramatic session', emerging: 'Repeatable practice' },
-  { conventional: 'Cold as punishment', emerging: 'Cold as a designed experience' },
+  { conventional: 'Temperature drifts during use', emerging: 'Temperature is set by the material' },
+  { conventional: 'Duration varies by tolerance', emerging: 'Duration is defined by the protocol' },
+  { conventional: 'Every session is different', emerging: 'Every session is the same' },
+  { conventional: 'Hard to know what changed', emerging: 'A consistent baseline to build on' },
 ];
 
 export function CategoryShift() {
@@ -19,8 +19,8 @@ export function CategoryShift() {
     <div className="category-shift">
       {/* Column headers — desktop only */}
       <div className="category-shift-header">
-        <span className="category-shift-label">Conventional framing</span>
-        <span className="category-shift-label">Emerging framing</span>
+        <span className="category-shift-label">Variable exposure</span>
+        <span className="category-shift-label">Fixed exposure</span>
       </div>
 
       {SHIFTS.map((shift, i) => (

@@ -213,8 +213,9 @@ export default function HomePage() {
                 className="text-prose"
                 style={{ marginBottom: 'var(--space-10)', maxWidth: 'var(--max-width-prose)' }}
               >
-                The conventional approach treats cold as a test of will. An emerging
-                approach treats it as a defined exposure with documented conditions.
+                When the exposure is the same every time — same temperature,
+                same duration, same delivery — you can start to see what
+                actually changes.
               </p>
             </ScrollReveal>
 
