@@ -84,7 +84,7 @@ const responses: PhysiologyResponse[] = [
   },
   {
     id: 'metabolism',
-    title: 'Thermogenesis during defined cold exposure',
+    title: 'Thermogenesis during cold water immersion',
     statement: 'Metabolic heat production and energy expenditure increased during cold water immersion.',
     method: 'Cold water immersion',
     temperature: '14 °C',

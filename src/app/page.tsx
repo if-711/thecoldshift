@@ -257,11 +257,13 @@ export default function HomePage() {
                 lineHeight: 'var(--leading-relaxed)',
                 marginBottom: 'var(--space-6)',
               }}>
-                Water immersion introduces variables the user cannot
-                control — temperature drifts as ice melts, wetness changes skin
-                conductance, and setup demands infrastructure. Cryotherapy caps
-                sessions at two to three minutes inside a facility. Neither
-                method lets the user define every condition.
+                In a home setting, water immersion temperature can change
+                during use, while whole-body cryotherapy is typically delivered
+                in brief, facility-controlled sessions. Both methods can be
+                standardised in research or professional environments, but for
+                individual consumer use they introduce variables — temperature
+                drift, wetness, time constraints — that the user cannot
+                easily control.
               </p>
               <p style={{
                 fontSize: 'var(--text-base)',
@@ -269,10 +271,11 @@ export default function HomePage() {
                 lineHeight: 'var(--leading-relaxed)',
                 marginBottom: 'var(--space-6)',
               }}>
-                Dry cold — solid conduction without water, wetness, or
-                time constraints — is the only full-body method where the user
-                sets the delivery, duration, and exit. That is what makes
-                controlled cold viable.
+                Dry cold containment is designed to offer a fixed-duration,
+                body-worn alternative that reduces several of these sources of
+                variation. Fit, ambient conditions, and initial PCM state can
+                still vary. Whether dry cold produces equivalent or distinct
+                physiological responses remains a product-testing question.
               </p>
               <p style={{
                 fontSize: 'var(--text-sm)',
