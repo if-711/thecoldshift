@@ -73,18 +73,19 @@ export default function RootLayout({
               '@graph': [
                 {
                   '@type': 'Organization',
-                  '@id': `${SITE_URL}/#organization`,
-                  name: 'BHVD Inc.',
+                  '@id': 'https://thecoldshift.com/#organization',
+                  name: 'The Cold Shift',
                   url: SITE_URL,
-                  description: 'Publisher of The Cold Shift, a category guide to controlled cold exposure.',
+                  description: 'A category guide to controlled cold exposure, published by BHVD Labs.',
+                  parentOrganization: { '@id': 'https://bhvd.co/#organization' },
                 },
                 {
                   '@type': 'WebSite',
-                  '@id': `${SITE_URL}/#website`,
+                  '@id': 'https://thecoldshift.com/#website',
                   url: SITE_URL,
                   name: 'The Cold Shift',
                   description: 'A category guide to controlled cold exposure — how cold is delivered, how the body detects it, what research supports, and what remains untested.',
-                  publisher: { '@id': `${SITE_URL}/#organization` },
+                  publisher: { '@id': 'https://thecoldshift.com/#organization' },
                   inLanguage: 'en-US',
                 },
                 {
@@ -92,7 +93,7 @@ export default function RootLayout({
                   '@id': `${SITE_URL}/#webpage`,
                   url: SITE_URL,
                   name: 'The Cold Shift: A Category Guide to Controlled Cold',
-                  isPartOf: { '@id': `${SITE_URL}/#website` },
+                  isPartOf: { '@id': 'https://thecoldshift.com/#website' },
                   about: [
                     { '@type': 'Thing', name: 'Cold exposure' },
                     { '@type': 'Thing', name: 'Cryotherapy' },

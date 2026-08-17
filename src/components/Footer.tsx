@@ -129,6 +129,9 @@ export function Footer() {
               <Link href="/evidence/claims/" style={{ color: 'rgba(232, 224, 212, 0.5)', transition: 'color var(--duration-fast)' }}>Claim Ledger</Link>
               <Link href="/safety/" style={{ color: 'rgba(232, 224, 212, 0.5)', transition: 'color var(--duration-fast)' }}>Safety</Link>
               <Link href="/editorial-standards/" style={{ color: 'rgba(232, 224, 212, 0.5)', transition: 'color var(--duration-fast)' }}>Editorial Standards</Link>
+              <a href="https://bodymindstate.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(232, 224, 212, 0.5)', transition: 'color var(--duration-fast)' }}>
+                Nervous-system research ↗
+              </a>
             </nav>
           </div>
 
